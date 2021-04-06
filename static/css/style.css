@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root{
+    --background: #EDEEF7;
+    --primary: #E4FBFF;
+    --secondary: #B8B5FF;
+    --tertiary: #7868E6;
+    --loginRegisterWidth: 278px;
+    --registerHeight: 400px;
+    --loginHeight: 220px;
+    --inputWidth: 212px;
+    --inputHeight: 43px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    background-color: var(--background);
+}
+
+main {
+    width: var(--loginRegisterWidth);
+    background-color: var(--primary);
+    height: var(--registerHeight);
+    position: absolute;
+    left: calc((100vw - var(--loginRegisterWidth)) / 2);
+    top: calc((100vh - var(--registerHeight)) / 2);
+}
+
+#register {
+    display: block;
+}
+
+#login {
+    display: none;
+}
+
+main input {
+    position: absolute;
+    width: var(--inputWidth);
+    height: var(--inputHeight);
+    left: calc((var(--loginRegisterWidth) - var(--inputWidth)) / 2);
+    background: var(--background);
+    border: none;
+    border-radius: 7px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    text-indent: 21px;
+}
+
+#register input:nth-child(1), #login input:nth-child(1) {
+    top: 15px;
+}
+
+#register input:nth-child(2), #login input:nth-child(2) {
+    top: calc(15px + (var(--inputHeight) + 21px));
+}
+
+#register input:nth-child(3) {
+    top: calc(15px + 2 * (var(--inputHeight) + 21px));
+}
+
+#register input:nth-child(4) {
+    top: calc(15px + 3 * (var(--inputHeight) + 21px));
+}
+
+main input[type="submit"] {
+    position: absolute;
+    width: 100px;
+    height: 31px;
+    left: calc((var(--loginRegisterWidth) - 100px)/2);
+    bottom: 48px;
+    text-indent: 0px;
+    background: #7868E6;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+#regLogin {
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+    color: #474747;
+    cursor: pointer;
+}
+
+@media (hover: none) {
+    #regLogin {
+        cursor: auto;
+    }
+}
+
+#logos {
+    position: relative;
+    width: 190px;
+    height: 40px;
+    top: calc(15px + 4 * (var(--inputHeight) + 21px));
+    left: calc((var(--loginRegisterWidth) - 190px) / 2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logos img{
+    width: 40px;
+    height: 40px;
+}
+
+#logo {
+    position: absolute;
+    width: 73px;
+    height: 55px;
+    left: 296px;
+    top: 46px;
+    background: var(--secondary);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px 40px;
+}
