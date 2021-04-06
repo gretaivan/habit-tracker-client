@@ -61,3 +61,32 @@ main input:nth-child(3) {
 main input:nth-child(4) {
     top: calc(15px + 3 * (var(--inputHeight) + 21px));
 }
+
+main input[type="submit"] {
+    position: absolute;
+    width: 100px;
+    height: 31px;
+    left: calc((var(--loginRegisterWidth) - 100px)/2);
+    top: 321px;
+    text-indent: 0px;
+    background: #7868E6;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+#regLogin {
+    position: absolute;
+    width: 44px;
+    height: 17px;
+    left: 125px;
+    top: 373px;
+    margin: 0px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #474747;
+}
