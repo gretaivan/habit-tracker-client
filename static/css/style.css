@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root{
+    --background: #EDEEF7;
+    --primary: #E4FBFF;
+    --secondary: #B8B5FF;
+    --tertiary: #7868E6;
+    --loginRegisterWidth: 278px;
+    --inputWidth: 212px;
+    --inputHeight: 43px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    background-color: var(--background);
+}
+
+main {
+    width: var(--loginRegisterWidth);
+    height: 400px;
+    background-color: var(--primary);
+    position: absolute;
+    left: calc((100vw - var(--loginRegisterWidth)) / 2);
+    top: 195px;
+}
+
+main input {
+    position: absolute;
+    width: var(--inputWidth);
+    height: var(--inputHeight);
+    left: calc((var(--loginRegisterWidth) - var(--inputWidth)) / 2);
+    background: var(--background);
+    border: none;
+    border-radius: 7px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    text-indent: 21px;
+}
+
+main input:nth-child(1) {
+    top: 15px;
+}
+
+main input:nth-child(2) {
+    top: calc(15px + (var(--inputHeight) + 21px));
+}
+
+main input:nth-child(3) {
+    top: calc(15px + 2 * (var(--inputHeight) + 21px));
+}
+
+main input:nth-child(4) {
+    top: calc(15px + 3 * (var(--inputHeight) + 21px));
+}
