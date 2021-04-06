@@ -1,9 +1,11 @@
+const main = document.querySelector('main');
+
 
 function changeForm() {
     regForm = document.getElementById('register');
     loginForm = document.getElementById('login');
     logos = document.getElementById('logos');
-    main = document.querySelector('main');
+    // main = document.querySelector('main');
     if (regForm.style.display === "none") {
         regForm.style.display = "block";
         logos.style.display = "block";
@@ -22,4 +24,4 @@ function changeForm() {
 }
 
 
-exports.modules = { changeForm }
+
