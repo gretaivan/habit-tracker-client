@@ -133,3 +133,51 @@ main input[type="submit"] {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px 40px;
 }
+
+.habit {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 50px 100px;
+    column-gap: 10px;
+    row-gap: 5px;
+    justify-items: center;
+    align-items: center;
+}
+
+.streakMessage {
+    margin: 0px;
+    text-align: center;
+}
+
+.completed {
+    margin: 0px;
+    text-align: center;
+    height: 30px;
+    font-size: 20px;
+}
+
+.completeTick {
+    display: inline-block;
+    text-align: center;
+    background-color: #25C00B;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+}
+
+.streak {
+    display: flex;
+    align-items: center;
+    background-color: var(--primary);
+    margin: 0px;
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+}
+
+.streakDays {
+    width: 100px;
+    margin: 0px;
+    text-align: center;
+}
