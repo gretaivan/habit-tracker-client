@@ -1,11 +1,45 @@
-const { changeForm } = require('./layout')
 
 const publicRoutes = ['#', '#login', '#register'];
-
-// window.addEventListener('hashchange', updateContent);
-//private routes
+const privateRoutes = ['#habits'];
 
 
+window.addEventListener('hashchange', updateContent);
+window.addEventListener('load', updateContent);
 
-document.getElementById('regLogin').addEventListener("click", changeForm);
 
+function updateContent(){
+    const path = window.location.hash;
+    console.log("window path: " + path)
+
+    //private path or not existing user
+    if (privateRoutes.includes(path) && !currentUser()){
+        window.location.hash = '#';
+        alert("You need to register or login!")
+    } else {
+        updateMain(path);
+    }
+}
+
+function updateMain(path) {
+    main.innerHTML = '';
+    if (path) {
+        switch(path){
+            case '':
+                renderLoginForm(); break;
+            case '#login':
+                renderLoginForm(); break;
+            case '#register':
+                renderRegisterForm(); break;
+            // case '#habits':
+            //     renderFeed(); break;
+            default:
+                render404(); break;
+        }
+    } else {
+        renderLoginForm();
+    }
+}
+
+
+
+// document.getElementById('regLogin').addEventListener("click", changeForm);
