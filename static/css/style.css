@@ -6,6 +6,8 @@
     --secondary: #B8B5FF;
     --tertiary: #7868E6;
     --loginRegisterWidth: 278px;
+    --registerHeight: 400px;
+    --loginHeight: 220px;
     --inputWidth: 212px;
     --inputHeight: 43px;
 }
@@ -23,13 +25,21 @@ html, body {
 main {
     width: var(--loginRegisterWidth);
     background-color: var(--primary);
-    height: 400px;
+    height: var(--registerHeight);
     position: absolute;
     left: calc((100vw - var(--loginRegisterWidth)) / 2);
-    top: 195px;
+    top: calc((100vh - var(--registerHeight)) / 2);
 }
 
-#register input {
+#register {
+    display: block;
+}
+
+#login {
+    display: none;
+}
+
+main input {
     position: absolute;
     width: var(--inputWidth);
     height: var(--inputHeight);
@@ -46,11 +56,11 @@ main {
     text-indent: 21px;
 }
 
-#register input:nth-child(1) {
+#register input:nth-child(1), #login input:nth-child(1) {
     top: 15px;
 }
 
-#register input:nth-child(2) {
+#register input:nth-child(2), #login input:nth-child(2) {
     top: calc(15px + (var(--inputHeight) + 21px));
 }
 
@@ -62,12 +72,12 @@ main {
     top: calc(15px + 3 * (var(--inputHeight) + 21px));
 }
 
-#register input[type="submit"] {
+main input[type="submit"] {
     position: absolute;
     width: 100px;
     height: 31px;
     left: calc((var(--loginRegisterWidth) - 100px)/2);
-    top: 321px;
+    bottom: 48px;
     text-indent: 0px;
     background: #7868E6;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -81,7 +91,7 @@ main {
     width: 44px;
     height: 17px;
     left: 125px;
-    top: 373px;
+    bottom: 10px;
     margin: 0px;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
