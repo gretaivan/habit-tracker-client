@@ -28,8 +28,8 @@ function updateMain(path) {
                 renderLoginForm(); break;
             case '#login':
                 renderLoginForm(); break;
-            // case '#register':
-            //     renderRegisterForm(); break;
+            case '#register':
+                renderRegisterForm(); break;
             // case '#habits':
             //     renderFeed(); break;
             default:
