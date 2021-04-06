@@ -22,14 +22,21 @@ function renderLoginForm() {
         { tag: 'input', attributes: { type: 'submit', value: 'Login' } }
     ]
     const form = document.createElement('form');
+    console.log("FORM STATUS")
+    console.log(form);
+
     fields.forEach(f => {
+        
+
         let field = document.createElement(f.tag);
 
+       
         Object.entries(f.attributes).forEach(([a, v]) => {
-            field.setAttribute(a, v);
+            field.setAttribute(a, v);    
             form.appendChild(field);
         })
     })
+    
     form.setAttribute("id", "login")
     // form.addEventListener('submit', requestLogin)
     main.appendChild(form);
