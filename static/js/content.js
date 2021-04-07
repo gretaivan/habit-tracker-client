@@ -47,8 +47,11 @@ function renderLoginForm() {
     document.getElementById('regLogin').addEventListener("click", changeForm);
 
 
-       //TODO after submit click
+    //TODO after submit click
     //call authenticate
+    form.addEventListener('submit', authenticate);
+
+       
 }
 
 function renderRegisterForm() {
@@ -57,7 +60,7 @@ function renderRegisterForm() {
         { tag: 'input', attributes: { type: 'text', id: 'reg-username', name: 'username', placeholder: 'Enter a username' } },
         { tag: 'input', attributes: { type: 'email', id: 'email', name: 'email', placeholder: 'Enter an email' } },
         { tag: 'input', attributes: { type: 'password', id: 'reg-password', name: 'password', placeholder: 'Enter a password' } },
-        { tag: 'input', attributes: { type: 'password', id: 'confirm-reg-password', name: 'password', placeholder: 'Confirm the password' } },
+        { tag: 'input', attributes: { type: 'password', id: 'confirm-reg-password', name: 'confirm', placeholder: 'Confirm the password' } },
         { tag: 'input', attributes: { type: 'submit', value: 'Register' } }
     ]
 
@@ -86,12 +89,9 @@ function renderRegisterForm() {
 
     //TODO after submit click
     //call authenticate
-
-
-
+    form.addEventListener('submit', authenticate);
 }
 
 function renderUserPage(){
-    
-    // location.assign("./habitPage.html");
+    location.assign("./habitPage.html");
 }
