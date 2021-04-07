@@ -19,7 +19,7 @@ function renderHabit(habitData) {
     let streakMessage = document.createElement('h4');
     streakMessage.setAttribute('class', 'streakMessage');
     streakMessage.innerHTML = 'Congratulations<br /> you have reached';
-    habit.appendChild(completed);
+    habit.appendChild(streakMessage);
     let habitImg = document.createElement('img');
     habitImg.setAttribute('class', 'habitImg');
     let Imgsrc;
@@ -36,6 +36,13 @@ function renderHabit(habitData) {
     streakBubble.setAttribute('class', 'streak');
     let streakDays = document.createElement('h2');
     streakDays.setAttribute('class', 'streakDays');
+    if (habitData.frequency == 7) {
+        streakDays.textContent = `${habitData.streak} WEEKS`
+    } else {
+        streakDays.textContent = `${habitData.streak} DAYS`
+    }
     streakBubble.appendChild(streakDays);
     habit.appendChild(streakBubble);
+    let body = document.querySelector('body');
+    body.appendChild(habit);
 }
