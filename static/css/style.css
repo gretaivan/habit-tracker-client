@@ -20,26 +20,25 @@ html, body {
     width: 100vw;
     margin: 0;
     background-color: var(--background);
-}
+} 
 
-main {
+ main {
     width: var(--loginRegisterWidth);
     background-color: var(--primary);
     height: var(--registerHeight);
     position: absolute;
     left: calc((100vw - var(--loginRegisterWidth)) / 2);
     top: calc((100vh - var(--registerHeight)) / 2);
-}
+} 
 
-#register {
+ #register {
     display: block;
 }
-
-#login {
+ /* #login {
     display: none;
-}
+}  */
 
-main input {
+ main input {
     position: absolute;
     width: var(--inputWidth);
     height: var(--inputHeight);
