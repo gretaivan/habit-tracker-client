@@ -1,4 +1,4 @@
-const server = 'https://dry-sierra-67697.herokuapp.com/';
+const server = 'https://dry-sierra-67697.herokuapp.com';
 
 function currentUser(){
     const username = localStorage.getItem('username');
