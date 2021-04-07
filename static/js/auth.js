@@ -32,16 +32,17 @@ async function authenticate(e){
         console.log(urlPath);
         console.log(options.body)
 
-        const res = await fetch('http://localhost:3000/auth/register', options);
+        const res = await fetch(urlPath, options);
         const resData = await res.json(); 
         console.log(resData)
 
 
         //if (resData.err){ throw Error(resData.err) }
         
-        localStorage.setItem("user-id", 1);
+        localStorage.setItem("user-id", resData.id);
+        localStorage.setItem("username", resData.username);
     //return id & username [server] of the user for both registration and login 
-        window.location.hash = '#habits'
+        // window.location.hash = '#habits'
 
     } catch(err) {
         console.log("[ERROR]: authentication failed:\n" + err);
