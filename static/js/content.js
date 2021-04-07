@@ -93,6 +93,5 @@ function renderRegisterForm() {
 }
 
 function renderUserPage(){
-    
-    // location.assign("./habitPage.html");
+    location.assign("./habitPage.html");
 }
