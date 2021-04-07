@@ -1,4 +1,4 @@
-const server = 'http://localhost:3000';
+const server = 'https://dry-sierra-67697.herokuapp.com/';
 
 function currentUser(){
     const username = localStorage.getItem('username');
