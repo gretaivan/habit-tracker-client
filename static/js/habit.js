@@ -25,9 +25,9 @@ function renderHabit(habitData) {
     let habitImg = document.createElement('img');
     habitImg.setAttribute('class', 'habitImg');
     let Imgsrc;
-    if (habitData.habitType == "coding") {
+    if (habitData.habit_name == "code") {
         Imgsrc = "static/images/laptop.png";
-    } else if (habitData.habitType == "water") {
+    } else if (habitData.habit_name == "water") {
         Imgsrc = "static/images/water.png";
     } else {
         Imgsrc = "static/images/sleep.png";
@@ -52,7 +52,7 @@ function renderHabit(habitData) {
     //add info from the form 
 
     let habitName = document.createElement('h1')
-    habitName.textContent = habitData.habit_name
+    habitName.textContent = `Habit: ${habitData.habit_name}`
     habit.append(habitName)
     let frequency = document.createElement('h6')
     frequency.textContent = `You want to track this ${habitData.frequency}`
@@ -61,7 +61,7 @@ function renderHabit(habitData) {
     // completed button
     let completeButton = document.createElement('button')
     habitName.append(completeButton)
-    completeButton.style.backgroundColor = "blue"
+    completeButton.style.backgroundColor = "green"
     completeButton.textContent = "Completed"
 
     // add event listener to completed button 
