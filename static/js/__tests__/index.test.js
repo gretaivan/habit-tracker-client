@@ -17,19 +17,19 @@ describe("index", () => {
         it('calls updateMain with falsy path', () => {
             app.updateContent();
             expect(renderLoginForm).toHaveBeenCalled();
-        })
-    });
+        });
 
-    it('calls alert when path in privateRoutes and there isn\'t a current user', () => {
-        currentUser.mockReturnValueOnce(false);
-        delete global.window.location;
-        global.window = Object.create(window);
-        global.window.location = {
-        hash: '#habits'
-        };
-        app.updateContent();
-        expect(alert).toHaveBeenCalled();
-    })
+        it('calls alert when path in privateRoutes and there isn\'t a current user', () => {
+            currentUser.mockReturnValueOnce(false);
+            delete global.window.location;
+            global.window = Object.create(window);
+            global.window.location = {
+            hash: '#habits'
+            };
+            app.updateContent();
+            expect(alert).toHaveBeenCalled();
+        });
+    });
 
     describe("updateMain", () => {
         it('calls renderLoginForm when path is #login', () => {
