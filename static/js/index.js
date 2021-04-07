@@ -34,7 +34,6 @@ function updateMain(path) {
                 render404(); break;
         }
     } else {
-        console.log(path)
         renderLoginForm();
     }
 }

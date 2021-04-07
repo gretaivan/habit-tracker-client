@@ -9,14 +9,27 @@ describe("index", () => {
     renderUserPage = jest.fn();
     render404 = jest.fn();
     renderLoginForm = jest.fn();
+    alert = jest.fn();
+    currentUser = jest.fn();
+    main = jest.fn();
 
     describe("updateContent", () => {
         it('calls updateMain with falsy path', () => {
-            main = jest.fn();
             app.updateContent();
             expect(renderLoginForm).toHaveBeenCalled();
         })
     });
+
+    it('calls alert when path in privateRoutes and there isn\'t a current user', () => {
+        currentUser.mockReturnValueOnce(false);
+        delete global.window.location;
+        global.window = Object.create(window);
+        global.window.location = {
+        hash: '#habits'
+        };
+        app.updateContent();
+        expect(alert).toHaveBeenCalled();
+    })
 
     describe("updateMain", () => {
         it('calls renderLoginForm when path is #login', () => {
