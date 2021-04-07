@@ -24,7 +24,18 @@ async function authenticate(e){
             body: JSON.stringify(Object.fromEntries(new FormData(e.target)))
         }
 
-        const res = await fetch(`${server}/auth/register`)
+        let trigger = e.target.id;
+        let urlPath = server; 
+        urlPath += trigger === 'register' ? '/auth/register' : '/user/login';
+
+        //delete console.log post dev
+        console.log(urlPath);
+
+        const res = await fetch(urlPath, options);
+        const resData = await res.json(); 
+
+        if (resData.err){ throw Error(resData.err) }
+        
 
     } catch(err) {
         console.log("[ERROR]: authentication failed:\n" + err);
