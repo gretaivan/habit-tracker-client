@@ -47,8 +47,11 @@ function renderLoginForm() {
     document.getElementById('regLogin').addEventListener("click", changeForm);
 
 
-       //TODO after submit click
+    //TODO after submit click
     //call authenticate
+    form.addEventListener('submit', authenticate);
+
+       
 }
 
 function renderRegisterForm() {
@@ -86,9 +89,7 @@ function renderRegisterForm() {
 
     //TODO after submit click
     //call authenticate
-
-
-
+    form.addEventListener('submit', authenticate);
 }
 
 function renderUserPage(){
