@@ -286,11 +286,40 @@ h2 {
     font-weight: bold;
 }
 
-@media (hover: none) {
-    #regLogin {
-        cursor: auto;
-    }
+#errorPage h3 {
+    color: var(--tertiary);
+    text-align: center;
+}
 
+#errorPage h1 span {
+    color: var(--tertiary);
+    text-align: center;
+    font-size: 80px;
+}
+
+#errorPage h1 {
+    color: var(--tertiary);
+    text-align: center;
+    font-size: 50px;
+}
+
+#errorPage a {
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+    color: #474747;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+@media (hover: none) {
     .close {
         color: white;
     }

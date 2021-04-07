@@ -1,13 +1,17 @@
 // RENDERS CONTENT ACOORDING TO PATHS
 function render404() {
     const errorDiv = document.createElement('div');
+    errorDiv.setAttribute('id', 'errorPage');
     const error = document.createElement('h3');
     error.textContent = "Oops, page does not exist";
+    const sadFace = document.createElement('h1');
+    sadFace.innerHTML = "<span>&#9785;</span><br />404";
 
     const homeLink = document.createElement('a');
     homeLink.href = "#login"
     homeLink.text = "Login"
 
+    errorDiv.appendChild(sadFace);
     errorDiv.appendChild(error);
     errorDiv.appendChild(homeLink);
     main.appendChild(errorDiv);
