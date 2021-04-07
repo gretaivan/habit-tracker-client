@@ -29,12 +29,12 @@ main {
     left: calc((100vw - var(--loginRegisterWidth)) / 2);
 }
 
-main .login {
+main.login {
     height: var(--loginHeight);
     top: calc((100vh - var(--loginHeight)) / 2);  
 }
 
-main .register {
+main.register {
     height: var(--registerHeight);
     top: calc((100vh - var(--registerHeight)) / 2);
 }
@@ -193,6 +193,7 @@ header h2 {
 
 h2 {
     font-weight: normal;
+    font-size: 1.2em;
 }
 
 #newHabitButton {
@@ -326,9 +327,23 @@ h2 {
     }
 }
 
+@media screen and (min-width: 300px) {
+    h2 {
+        font-size: 1.5em;
+    }
+}
+
 @media screen and (min-width: 500px) {
     body {
         width: 500px;
         margin: 0 auto;
+    }
+
+    main {
+        left: calc((500px - var(--loginRegisterWidth)) / 2);
+    }
+
+    #newHabitButton {
+        left: 130px;
     }
 }
