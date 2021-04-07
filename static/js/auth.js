@@ -42,7 +42,7 @@ async function authenticate(e){
         localStorage.setItem("user-id", resData.id);
         localStorage.setItem("username", resData.username);
     //return id & username [server] of the user for both registration and login 
-        // window.location.hash = '#habits'
+        window.location.hash = '#habits'
 
     } catch(err) {
         console.log("[ERROR]: authentication failed:\n" + err);
