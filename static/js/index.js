@@ -1,6 +1,6 @@
 
-const publicRoutes = ['#', '#login', '#register', '#habits'];
-const privateRoutes = [];
+const publicRoutes = ['#', '#login', '#register'];
+const privateRoutes = ['#habits'];
 
 
 window.addEventListener('hashchange', updateContent);
@@ -9,7 +9,7 @@ window.addEventListener('load', updateContent);
 
 function updateContent(){
     const path = window.location.hash;
-    console.log("window path: " + path)
+    //console.log("window path: " + path)
 
     //private path or not existing user
     if (privateRoutes.includes(path) && !currentUser()){
@@ -24,8 +24,6 @@ function updateMain(path) {
     main.innerHTML = '';
     if (path) {
         switch(path){
-            case '':
-                renderLoginForm(); break;
             case '#login':
                 renderLoginForm(); break;
             case '#register':
@@ -36,10 +34,14 @@ function updateMain(path) {
                 render404(); break;
         }
     } else {
+        console.log(path)
         renderLoginForm();
     }
 }
 
-
+module.exports = {
+    updateContent,
+    updateMain
+}
 
 // document.getElementById('regLogin').addEventListener("click", changeForm);
