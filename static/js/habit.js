@@ -52,7 +52,45 @@ function renderHabit(habitData) {
     let habitName = document.createElement('h1')
     habitName.textContent = habitData.habit_name
     habit.append(habitName)
-    let frequency = document.createElement('h5')
+    let frequency = document.createElement('h6')
     frequency.textContent = `You want to track this ${habitData.frequency}`
     habitName.append(frequency)
+
+    // completed button
+    let completeButton = document.createElement('button')
+    habitName.append(completeButton)
+    completeButton.style.backgroundColor = "blue"
+    completeButton.textContent = "Completed"
+
+    // add event listener to completed button 
+    completeButton.onclick = () => updateCompleted(habitData.id)
+
+   console.log(habitData.id)
 }
+
+
+// function changeColor(){
+//     let body = document.querySelector('body')
+//     body.style.backgroundColor = "pink"
+// }
+
+async function updateCompleted(id){
+    const options = { 
+        method: 'PATCH'
+    };
+    try{
+    const res = await fetch(`http://localhost:3000/habits/${id}`, options)
+    
+    const resData = await res.json(); 
+    console.log(resData)
+    }
+
+    catch(err){console.log(err)
+    }
+
+}
+
+// function showCompletedtoUser(){
+//     let comdocument.createElement('h1')
+    
+// }
