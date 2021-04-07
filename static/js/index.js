@@ -1,6 +1,6 @@
 
-const publicRoutes = ['#', '#login', '#register'];
-const privateRoutes = ['#habits'];
+const publicRoutes = ['#', '#login', '#register', '#habits'];
+const privateRoutes = [];
 
 
 window.addEventListener('hashchange', updateContent);
@@ -30,8 +30,8 @@ function updateMain(path) {
                 renderLoginForm(); break;
             case '#register':
                 renderRegisterForm(); break;
-            // case '#habits':
-            //     renderFeed(); break;
+            case '#habits':
+                renderUserPage(); break;
             default:
                 render404(); break;
         }

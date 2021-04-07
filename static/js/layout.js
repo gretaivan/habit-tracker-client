@@ -1,7 +1,5 @@
 const main = document.querySelector('main');
-const modal = document.getElementById("modal");
-const modalOpen = document.getElementById("newHabitButton");
-const span = document.getElementsByClassName("close")[0];
+
 
 function changeForm() {
     regForm = document.getElementById('register');
@@ -28,10 +26,5 @@ function changeForm() {
     }
 }
 
-modalOpen.onclick = function() {
-  modal.style.display = "block";
-}
 
-span.onclick = function() {
-  modal.style.display = "none";
-}
+
