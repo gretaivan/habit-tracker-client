@@ -45,4 +45,14 @@ function renderHabit(habitData) {
     habit.appendChild(streakBubble);
     let body = document.querySelector('body');
     body.appendChild(habit);
+
+
+    //add info from the form 
+
+    let habitName = document.createElement('h1')
+    habitName.textContent = habitData.habit_name
+    habit.append(habitName)
+    let frequency = document.createElement('h5')
+    frequency.textContent = `You want to track this ${habitData.frequency}`
+    habitName.append(frequency)
 }
