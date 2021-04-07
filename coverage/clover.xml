@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1617837742060" clover="3.2.0">
-  <project timestamp="1617837742060" name="All files">
-    <metrics statements="18" coveredstatements="18" conditionals="10" coveredconditionals="10" methods="2" coveredmethods="2" elements="30" coveredelements="30" complexity="0" loc="18" ncloc="18" packages="1" files="1" classes="1"/>
+<coverage generated="1617838619103" clover="3.2.0">
+  <project timestamp="1617838619103" name="All files">
+    <metrics statements="23" coveredstatements="23" conditionals="12" coveredconditionals="12" methods="3" coveredmethods="3" elements="38" coveredelements="38" complexity="0" loc="23" ncloc="23" packages="1" files="2" classes="2"/>
     <file name="index.js" path="C:\Users\james\FP_lap2\habit-tracker-client\static\js\index.js">
       <metrics statements="18" coveredstatements="18" conditionals="10" coveredconditionals="10" methods="2" coveredmethods="2"/>
       <line num="2" count="1" type="stmt"/>
@@ -22,6 +22,14 @@
       <line num="34" count="1" type="stmt"/>
       <line num="37" count="2" type="stmt"/>
       <line num="41" count="1" type="stmt"/>
+    </file>
+    <file name="layout.js" path="C:\Users\james\FP_lap2\habit-tracker-client\static\js\layout.js">
+      <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <line num="2" count="2" type="stmt"/>
+      <line num="6" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="7" count="1" type="stmt"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="26" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
