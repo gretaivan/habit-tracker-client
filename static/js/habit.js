@@ -5,6 +5,8 @@ const span = document.getElementsByClassName("close")[0];
 modalOpen.addEventListener('click', () => modal.style.display = "block");
 span.addEventListener('click', () => modal.style.display = "none");
 
+//renders an individual habit
+
 function renderHabit(habitData) {
     let habit = document.createElement('div');
     habit.setAttribute('class', 'habit');
@@ -65,32 +67,13 @@ function renderHabit(habitData) {
     // add event listener to completed button 
     completeButton.onclick = () => updateCompleted(habitData.id)
 
-   console.log(habitData.id)
 }
 
 
-// function changeColor(){
-//     let body = document.querySelector('body')
-//     body.style.backgroundColor = "pink"
-// }
-
-async function updateCompleted(id){
-    const options = { 
-        method: 'PATCH'
-    };
-    try{
-    const res = await fetch(`http://localhost:3000/habits/${id}`, options)
-    
-    const resData = await res.json(); 
-    console.log(resData)
-    }
-
-    catch(err){console.log(err)
-    }
-
+//renders all habits on page
+function renderHabits(data){
+    data.forEach(habit => renderHabit(habit))
 }
 
-// function showCompletedtoUser(){
-//     let comdocument.createElement('h1')
-    
-// }
+
+
