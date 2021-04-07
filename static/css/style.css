@@ -100,12 +100,6 @@ main input[type="submit"] {
     cursor: pointer;
 }
 
-@media (hover: none) {
-    #regLogin {
-        cursor: auto;
-    }
-}
-
 #logos {
     position: relative;
     width: 190px;
@@ -131,4 +125,173 @@ main input[type="submit"] {
     background: var(--secondary);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px 40px;
+}
+
+.habit {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 50px 100px;
+    column-gap: 10px;
+    row-gap: 5px;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.streakMessage {
+    margin: 0px;
+    text-align: center;
+}
+
+.completed {
+    margin: 0px;
+    text-align: center;
+    height: 30px;
+    font-size: 20px;
+}
+
+.completeTick {
+    display: inline-block;
+    text-align: center;
+    background-color: #25C00B;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+}
+
+.streak {
+    display: flex;
+    align-items: center;
+    background-color: var(--primary);
+    margin: 0px;
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+}
+
+.streakDays {
+    width: 100px;
+    margin: 0px;
+    text-align: center;
+}
+
+header {
+    height: 140px;
+    position: relative;
+}
+
+header h2 {
+    position: absolute;
+    left: 10%;
+    top: 35px;
+    width: 30%;
+    color: var(--secondary);
+    margin: 0px;
+}
+
+h2 {
+    font-weight: normal;
+}
+
+#newHabitButton {
+    position: absolute;
+    width: 280px;
+    height: 41px;
+    left: calc(50vw - 140px);
+    bottom: 25px;
+    background: #7868E6;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    color: white;
+}
+
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    width: 50px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+}
+  
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modal div {
+    position: absolute;
+    width: 280px;
+    height: 340px;
+    top: calc(50vh - 200px);
+    left: calc(50vw - 140px);
+    background-color: var(--primary);
+}
+
+#newHabit select {
+    display: block;
+    margin: auto;
+    width: var(--inputWidth);
+    height: var(--inputHeight);
+    background: var(--background);
+    border: none;
+    border-radius: 7px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    text-indent: 21px;
+}
+
+#newHabit label {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: var(--inputWidth);
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+}
+
+#newHabit input[type="submit"] {
+    position: absolute;
+    width: 150px;
+    height: 31px;
+    left: 65px;
+    bottom: 20px;
+    text-indent: 0px;
+    background: #7868E6;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+@media (hover: none) {
+    #regLogin {
+        cursor: auto;
+    }
+
+    .close {
+        color: white;
+    }
 }

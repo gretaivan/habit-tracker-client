@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Force of Habit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="static/css/style.css">
+    <!-- <script defer src="./bundle.js"></script> -->
+</head>
+<body>
+    <main style="display: none;"></main>
+    <header>
+        <h2 id="greeting">Hi <b>User</b>, here are your habits</h2>
+        <div id="logo"></div>
+    </header>
+    <div class="habit">
+        <h4 class="completed">Completed <span class="completeTick">&#10004;</span></h4>
+        <h4 class="streakMessage">Congratulations<br /> you have reached</h4>
+        <img class="habitImg" src="static/images/laptop.png" />
+        <div class="streak">
+            <h2 class="streakDays">38 DAYS</h2>
+        </div>
+    </div>
+    <div class="habit">
+        <h4 class="completed">Completed <span class="completeTick">&#10004;</span></h4>
+        <h4 class="streakMessage">Congratulations<br /> you have reached</h4>
+        <img class="habitImg" src="static/images/water.png" />
+        <div class="streak">
+            <h2 class="streakDays">20 DAYS</h2>
+        </div>
+    </div>
+    <div class="habit">
+        <h4 class="completed">Double click icon if completed</span></h4>
+        <h4 class="streakMessage">Congratulations<br /> you have reached</h4>
+        <img class="habitImg" src="static/images/sleep.png" />
+        <div class="streak">
+            <h2 class="streakDays">7 DAYS</h2>
+        </div>
+    </div>
+    <button id="newHabitButton">create new habit</button>
+    <div id="modal">
+        <span class="close">&times;</span>
+        <div>
+            <form id="newHabit">
+                <label for="habitName">I want to track my</label>
+                <select id="habitName" name="habitName" placeholder="Select a habit">
+                    <option value="" selected disabled hidden>Select a habit</option>
+                    <option value="code">Coding</option>
+                    <option value="water">Water intake</option>
+                    <option value="sleep">Sleep</option>
+                </select>
+                <label for="habitGoal">and reach a goal of</label>
+                <select id="habitGoal" name="habitGoal">
+                    <option value="" selected disabled hidden>Select goal</option>
+                    <option value="fourteen">14 days</option>
+                    <option value="thirtyOne">31 days</option>
+                    <option value="ninety">90 days</option>
+                </select>
+                <label for="habitFreq">and track it every</label>
+                <select id="habitFreq" name="habitFreq">
+                    <option value="" selected disabled hidden>Select frequency</option>
+                    <option value="day">Day</option>
+                    <option value="twoDays">Two days</option>
+                    <option value="week">Week</option>
+                </select>
+                <input type="submit" value="create new habit">
+            </form>
+        </div>
+    </div>
+    <script src="static/js/auth.js"></script>
+    <script src="static/js/layout.js"></script>
+    <script src="static/js/content.js"></script>
+    <script src="static/js/index.js"></script>
+</body>
+</html>
