@@ -20,7 +20,7 @@ function sendHabitInfo(e){
 
     fetch('http://localhost:3000/habits', options)
         .then(r => r.json())
-        .then(data => renderHabit(data))
+        .then(data => renderHabit(data)) // and close form
         .then(() => e.target.reset())
         .catch(console.warn)
 
