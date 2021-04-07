@@ -9,10 +9,6 @@ function currentUser(){
     return username;
 }
 
-
-
-
-//TODO: function to authenticate
 async function authenticate(e){
     //trigered but event listener on submit 
     e.preventDefault(); 
@@ -25,6 +21,9 @@ async function authenticate(e){
         }
 
         let trigger = e.target.id;
+
+        if (trigger === 'register') register(options.body);
+
         let urlPath = server; 
         urlPath += trigger === 'register' ? '/auth/register' : '/users/login';
 
@@ -32,22 +31,59 @@ async function authenticate(e){
         console.log(urlPath);
         console.log(options.body)
 
-        const res = await fetch('http://localhost:3000/auth/register', options);
+        const res = await fetch(urlPath, options);
         const resData = await res.json(); 
         console.log(resData)
 
+        
 
         //if (resData.err){ throw Error(resData.err) }
         
-        localStorage.setItem("user-id", 1);
+        localStorage.setItem("user-id", resData.id);
+        localStorage.setItem("username", resData.username);
     //return id & username [server] of the user for both registration and login 
         window.location.hash = '#habits'
 
     } catch(err) {
         console.log("[ERROR]: authentication failed:\n" + err);
+        alert("Something went wrong!")
     }
     
 
+}
+
+function register(data){
+    let object = JSON.parse(data)
+    console.log(object.password)
+
+
+    let passValid = confirmPassword(object)
+
+    if(!passValid){
+        console.log("Passwords did not match")
+
+        var errorP = document.createElement("P");
+        errorP.textContent = "passwords must match";
+        errorP.style.color = "red";
+
+        console.log(errorP)
+        let form = document.getElementById('register')
+        console.log(form.childNodes)
+
+        //P will need styling!
+
+        form.insertBefore(errorP, form.children[5])
+    }
+}
+
+function confirmPassword(object){
+   
+
+    if(object.password !== object.confirm){
+      
+        return false; 
+    }
+    return true; 
 }
 
 
