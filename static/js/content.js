@@ -1,13 +1,17 @@
 // RENDERS CONTENT ACOORDING TO PATHS
 function render404() {
     const errorDiv = document.createElement('div');
+    errorDiv.setAttribute('id', 'errorPage');
     const error = document.createElement('h3');
     error.textContent = "Oops, page does not exist";
+    const sadFace = document.createElement('h1');
+    sadFace.innerHTML = "<span>&#9785;</span><br />404";
 
     const homeLink = document.createElement('a');
     homeLink.href = "#login"
     homeLink.text = "Login"
 
+    errorDiv.appendChild(sadFace);
     errorDiv.appendChild(error);
     errorDiv.appendChild(homeLink);
     main.appendChild(errorDiv);
@@ -50,8 +54,8 @@ function renderLoginForm() {
     //TODO after submit click
     //call authenticate
     form.addEventListener('submit', authenticate);
-
-       
+    
+    main.setAttribute('class', 'login')
 }
 
 function renderRegisterForm() {
@@ -80,6 +84,18 @@ function renderRegisterForm() {
     // form.addEventListener('submit', requestLogin)
     main.appendChild(form);
 
+    const logoDiv = document.createElement('div');
+    logoDiv.setAttribute('id', 'logos');
+    const logos = ["static/images/Facebook.png", "static/images/Instagram.png", "static/images/Google.png", "static/images/GitHub.png"]
+
+    logos.forEach(url => {
+        let logo = document.createElement('img');
+        logo.setAttribute('src', url);
+        logoDiv.appendChild(logo);
+    })
+
+    main.appendChild(logoDiv);
+
     const formSwitch = document.createElement('p');
     formSwitch.setAttribute("id", "regLogin")
     formSwitch.textContent = "Login";
@@ -90,6 +106,8 @@ function renderRegisterForm() {
     //TODO after submit click
     //call authenticate
     form.addEventListener('submit', authenticate);
+    
+    main.setAttribute('class', 'register')
 }
 
 function renderUserPage(){
