@@ -45,6 +45,10 @@ function renderLoginForm() {
     main.appendChild(formSwitch);
 
     document.getElementById('regLogin').addEventListener("click", changeForm);
+
+
+       //TODO after submit click
+    //call authenticate
 }
 
 function renderRegisterForm() {
@@ -56,6 +60,7 @@ function renderRegisterForm() {
         { tag: 'input', attributes: { type: 'password', id: 'confirm-reg-password', name: 'password', placeholder: 'Confirm the password' } },
         { tag: 'input', attributes: { type: 'submit', value: 'Register' } }
     ]
+
     const form = document.createElement('form');
 
     fields.forEach(f => {
@@ -78,4 +83,36 @@ function renderRegisterForm() {
     main.appendChild(formSwitch);
 
     document.getElementById('regLogin').addEventListener("click", changeForm);
+
+    //TODO after submit click
+    //call authenticate
+
+
+
 }
+
+function renderUserPage(){
+    
+    // location.assign("./habitPage.html");
+
+    
+
+   
+    
+    const modal = document.getElementById("modal");
+    const modalOpen = document.getElementById("newHabitButton");
+    const span = document.getElementsByClassName("close")[0];
+    console.log(modalOpen);
+    
+    modalOpen.addEventListener('click', () => modal.style.display = "block");
+    span.addEventListener('click', () => modal.style.display = "none");
+}
+
+//refactor to event listeners
+// modalOpen.onclick = function() {
+//   modal.style.display = "block";
+// }
+
+// span.onclick = function() {
+//   modal.style.display = "none";
+// }
