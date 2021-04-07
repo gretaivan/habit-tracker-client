@@ -55,8 +55,7 @@ function renderLoginForm() {
     //call authenticate
     form.addEventListener('submit', authenticate);
     
-    main.style.height = "var(--loginHeight)";
-    main.style.top = "calc((100vh - var(--loginHeight)) / 2)";   
+    main.setAttribute('class', 'login')
 }
 
 function renderRegisterForm() {
@@ -107,9 +106,8 @@ function renderRegisterForm() {
     //TODO after submit click
     //call authenticate
     form.addEventListener('submit', authenticate);
-
-    main.style.height = "var(--registerHeight)";
-    main.style.top = "calc((100vh - var(--registerHeight)) / 2)";
+    
+    main.setAttribute('class', 'register')
 }
 
 function renderUserPage(){

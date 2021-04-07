@@ -22,23 +22,24 @@ html, body {
     background-color: var(--background);
 } 
 
- main {
+main {
     width: var(--loginRegisterWidth);
     background-color: var(--primary);
-    height: var(--registerHeight);
     position: absolute;
     left: calc((100vw - var(--loginRegisterWidth)) / 2);
-    top: calc((100vh - var(--registerHeight)) / 2);
-} 
-
- #register {
-    display: block;
 }
- /* #login {
-    display: none;
-}  */
 
- main input {
+main .login {
+    height: var(--loginHeight);
+    top: calc((100vh - var(--loginHeight)) / 2);  
+}
+
+main .register {
+    height: var(--registerHeight);
+    top: calc((100vh - var(--registerHeight)) / 2);
+}
+
+main input {
     position: absolute;
     width: var(--inputWidth);
     height: var(--inputHeight);
@@ -120,8 +121,8 @@ main input[type="submit"] {
     position: absolute;
     width: 73px;
     height: 55px;
-    left: 296px;
-    top: 46px;
+    right: 45px;
+    top: 45px;
     background: var(--secondary);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px 40px;
@@ -196,9 +197,9 @@ h2 {
 
 #newHabitButton {
     position: absolute;
-    width: 280px;
+    width: 240px;
     height: 41px;
-    left: calc(50vw - 140px);
+    left: calc(50vw - 120px);
     bottom: 25px;
     background: #7868E6;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -322,5 +323,12 @@ h2 {
 @media (hover: none) {
     .close {
         color: white;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    body {
+        width: 500px;
+        margin: 0 auto;
     }
 }
