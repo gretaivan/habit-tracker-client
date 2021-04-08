@@ -21,6 +21,10 @@ function renderHabit(habitData) {
 
     let habit = document.createElement('div');
     habit.setAttribute('class', 'habit');
+
+    // habit.addEventListener('click', () => console.log(habit))
+
+
     let completed = document.createElement('h4');
     completed.setAttribute('class', 'completed');
     // if (habitData.completed) {
@@ -68,8 +72,7 @@ function renderHabit(habitData) {
     let frequency = document.createElement('h6')
   
     if (habitData.frequency === 1){
-    
-    frequency.textContent = `You are tracking this habit: Daily`
+        frequency.textContent = `You are tracking this habit: Daily`
     }
 
     else if(habitData.frequency === 2){
@@ -81,21 +84,87 @@ function renderHabit(habitData) {
     
     habitName.append(frequency)
 
+   
+
+    
 
      //if last completed date and todays date are the same, I don't want to show button
 
     // let completeButton = document.createElement('button')
     //         habitName.append(completeButton)
     //         completeButton.style.backgroundColor = "green"
+    
+    habit.setAttribute("id", habitData.id);
+    let main = document.querySelector('section')
+    main.append(habit)
+
+
+    // document.getElementById(id).addEventListener('click', completedTick)
+    main.addEventListener('click', completedTick)
+
+    renderCompleted(habitData.id)
+    // completedTick(); 
+}
+
+
+function renderCompleted(id){
+    let habitDiv = document.getElementById(id)
+    // habitDiv.addEventListener('click', completedTick(id))
+    let div = document.createElement('div')
+    let divId =  'completed-' + id;
+    div.setAttribute("id", divId);
+    habitDiv.appendChild(div);
+
+    
+    
+   
+}
+
+
+
+function completedTick(e){
+    console.log("HI I AM TICKING FUNCTION")
+    console.log(e.target.parentNode.id)
+    let id = e.target.parentNode.id
+    let img = document.createElement('img');
+    img.setAttribute("class", "completed-tick-img")
+    // let div = document.getElementById(`complete-${id}`)
+    let div = document.getElementById(`completed-${id}`)
+    
+    console.log("child count")
+
+    console.log(div.childElementCount)
+    console.log(div.innerHTML)
+    if (div.childElementCount < 1){
+        img.src = "https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/256x256/plain/checkbox.png"
+        div.appendChild(img)
+     } else {
+         console.log("ATTEMPT TO REMOVE")
+       div.removeChild(div.lastChild)
+     }
+
+}
+
+ 
+function test(){
+//PEARL
+
+
 
       let lastCompletedDate = habitData.last_comp_date
         //   let today = new Intl.DateTimeFormat("fr-CA", {year: "numeric", month: "2-digit", day: "2-digit"}).format(Date.now())
-              let today = "2021-04-09"
+            let today = "2021-04-09"  // later add funciton for today
 
-          console.log(lastCompletedDate)
-          console.log(today)
+        console.log(lastCompletedDate)
+        console.log(today)
 
-
+    // btn logic 
+    // requires:  last completed date, today, frequency 
+    // to find if it is compliant with frequency
+    //e.g. frequency: week 
+        // frequency = 7; last completed_date = 07/04/2021; today 09/04/2021
+        //isCompliant = (last_completed_date + frequency) === today  --> false
+        // if()
         
 
     if (lastCompletedDate != null){
