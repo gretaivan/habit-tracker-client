@@ -4,13 +4,15 @@
   "description": "A front-end of a habit tracker app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"watchify ./static/js/index.js -o bundle.js\" \"python -m http.server\""
+    "dev": "concurrently \"watchify ./static/js/index.js -o bundle.js\" \"python -m http.server\"",
+    "test": "jest",
+    "coverage": "jest --coverage"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^6.0.1",
-    "watchify": "^4.0.0"
+    "watchify": "^4.0.0",
+    "jest": "^26.6.3"
   }
 }
