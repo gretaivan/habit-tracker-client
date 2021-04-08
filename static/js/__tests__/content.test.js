@@ -51,6 +51,7 @@ describe("content", () => {
             }
             app.renderUserPage();
             expect(window.location.assign).toHaveBeenCalled();
+            expect(window.location.assign).toHaveBeenCalledWith("./habitPage.html");
         });
     });
 });
