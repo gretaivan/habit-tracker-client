@@ -288,6 +288,16 @@ h2 {
     font-weight: bold;
 }
 
+
+.completed-tick-img{
+    height: 50px;
+}
+
+@media (hover: none) {
+    #regLogin {
+        cursor: auto;
+    }
+
 #errorPage h3 {
     color: var(--tertiary);
     text-align: center;
@@ -346,4 +356,5 @@ h2 {
     #newHabitButton {
         left: 130px;
     }
+}
 }
