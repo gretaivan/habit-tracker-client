@@ -45,8 +45,11 @@ async function authenticate(e){
 
 
 function logout(){
-    localStorage.clear(); 
-    location.hash = '#login'
+    console.log("logout")
+    // localStorage.clear(); 
+    console.log(window.location.toString())
+    // window.location.hash = '#login'
+    location.assign("./index.html");
 }
 
 function register(data){

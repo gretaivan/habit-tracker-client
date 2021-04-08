@@ -5,10 +5,14 @@ const span = document.getElementsByClassName("close")[0];
 modalOpen.addEventListener('click', () => modal.style.display = "block");
 span.addEventListener('click', () => modal.style.display = "none");
 
+
+
 //renders an individual habit
 
 function renderHabit(habitData) {
 
+    document.getElementById('logout').addEventListener('click', logout)
+    
     const username = localStorage.getItem('username');
     document.getElementById('username-display').textContent = username;
     // //if last completed date and todays date are the same, I don't want to show button
@@ -77,28 +81,24 @@ function renderHabit(habitData) {
 
     generateStreak(habitData);
 
+    let habitName = document.createElement('h1')
 
-    // let body = document.querySelector('body');
-    // body.appendChild(habit);
-
-
-
-    //add info from the form 
     let str = 'I will '; 
 
     if (habitData.habit_name == "code") {
-       str += 'code 4 - 8 hours ';
-
+        habitName.textContent = "Code"
+        str += 'code 4 - 8 hours ';
     } else if (habitData.habit_name == "water") {
+        habitName.textContent = "Drink"
         str += 'drink at least 8 glasses of water ';
-
     } else {
+        habitName.textContent = "Sleep"
         str += ' sleep at least 8 hours ';
-
     }
 
-    let habitName = document.createElement('h1')
-    habitName.textContent = `Habit: ${habitData.habit_name}`
+    // habitName.textContent = `Habit: ${habitData.habit_name}`
+
+
     habit.append(habitName)
     let frequency = document.createElement('h6')
   

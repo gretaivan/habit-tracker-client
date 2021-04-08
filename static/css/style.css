@@ -351,6 +351,8 @@ h6{
 
 #logout{
     margin-left: 15px;
+    color: var(--background);
+    font-weight: 600;
 }
 @media (hover: none) {
     .close {
