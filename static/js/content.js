@@ -34,9 +34,9 @@ function renderLoginForm() {
 
        
         Object.entries(f.attributes).forEach(([a, v]) => {
-            field.setAttribute(a, v);    
-            form.appendChild(field);
-        })
+            field.setAttribute(a, v);
+        })    
+        form.appendChild(field);
     })
 
     form.setAttribute("id", "login")
@@ -75,9 +75,9 @@ function renderRegisterForm() {
         let field = document.createElement(f.tag);
 
         Object.entries(f.attributes).forEach(([a, v]) => {
-            field.setAttribute(a, v);    
-            form.appendChild(field);
-        })
+            field.setAttribute(a, v);
+        })    
+        form.appendChild(field);
     })
 
     form.setAttribute("id", "register")
@@ -113,3 +113,5 @@ function renderRegisterForm() {
 function renderUserPage(){
     location.assign("./habitPage.html");
 }
+
+module.exports = {render404, renderLoginForm, renderRegisterForm, renderUserPage}
