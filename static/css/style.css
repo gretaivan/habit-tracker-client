@@ -1,326 +1,372 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 
-:root{
-    --background: #EDEEF7;
-    --primary: #E4FBFF;
-    --secondary: #B8B5FF;
-    --tertiary: #7868E6;
-    --loginRegisterWidth: 278px;
-    --registerHeight: 400px;
-    --loginHeight: 220px;
-    --inputWidth: 212px;
-    --inputHeight: 43px;
+:root {
+  --background: #edeef7;
+  --primary: #e4fbff;
+  --secondary: #b8b5ff;
+  --tertiary: #7868e6;
+  --loginRegisterWidth: 278px;
+  --registerHeight: 400px;
+  --loginHeight: 220px;
+  --inputWidth: 212px;
+  --inputHeight: 43px;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html, body {
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
-    background-color: var(--background);
-} 
+html,
+body {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  /* background-color: var(--background); */
+  font-family: "Roboto", sans-serif;
+}
+
+.mobile-container {
+  max-width: 480px;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+  background-color: var(--background);
+}
 
 main {
-    width: var(--loginRegisterWidth);
-    background-color: var(--primary);
-    position: absolute;
-    left: calc((100vw - var(--loginRegisterWidth)) / 2);
+  width: var(--loginRegisterWidth);
+  background-color: var(--primary);
+  position: absolute;
+  left: calc((100vw - var(--loginRegisterWidth)) / 2);
+  height: 100vh;
 }
 
 main.login {
-    height: var(--loginHeight);
-    top: calc((100vh - var(--loginHeight)) / 2);  
+  height: var(--loginHeight);
+  top: calc((100vh - var(--loginHeight)) / 2);
 }
 
 main.register {
-    height: var(--registerHeight);
-    top: calc((100vh - var(--registerHeight)) / 2);
+  height: var(--registerHeight);
+  top: calc((100vh - var(--registerHeight)) / 2);
 }
 
 main input {
-    position: absolute;
-    width: var(--inputWidth);
-    height: var(--inputHeight);
-    left: calc((var(--loginRegisterWidth) - var(--inputWidth)) / 2);
-    background: var(--background);
-    border: none;
-    border-radius: 7px;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 16px;
-    color: #000000;
-    text-indent: 21px;
+  position: absolute;
+  width: var(--inputWidth);
+  height: var(--inputHeight);
+  left: calc((var(--loginRegisterWidth) - var(--inputWidth)) / 2);
+  background: var(--background);
+  border: none;
+  border-radius: 7px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+  text-indent: 21px;
 }
 
-#register input:nth-child(1), #login input:nth-child(1) {
-    top: 15px;
+#register input:nth-child(1),
+#login input:nth-child(1) {
+  top: 15px;
 }
 
-#register input:nth-child(2), #login input:nth-child(2) {
-    top: calc(15px + (var(--inputHeight) + 21px));
+#register input:nth-child(2),
+#login input:nth-child(2) {
+  top: calc(15px + (var(--inputHeight) + 21px));
 }
 
 #register input:nth-child(3) {
-    top: calc(15px + 2 * (var(--inputHeight) + 21px));
+  top: calc(15px + 2 * (var(--inputHeight) + 21px));
 }
 
 #register input:nth-child(4) {
-    top: calc(15px + 3 * (var(--inputHeight) + 21px));
+  top: calc(15px + 3 * (var(--inputHeight) + 21px));
 }
 
 main input[type="submit"] {
-    position: absolute;
-    width: 100px;
-    height: 31px;
-    left: calc((var(--loginRegisterWidth) - 100px)/2);
-    bottom: 48px;
-    text-indent: 0px;
-    background: #7868E6;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-    color: white;
-    font-weight: bold;
+  position: absolute;
+  width: 100px;
+  height: 31px;
+  left: calc((var(--loginRegisterWidth) - 100px) / 2);
+  bottom: 48px;
+  text-indent: 0px;
+  background: #7868e6;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
 }
 
 #regLogin {
-    position: absolute;
-    width: 100%;
-    bottom: 10px;
-    margin: 0px;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    text-align: center;
-    font-size: 14px;
-    line-height: 16px;
-    color: #474747;
-    cursor: pointer;
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+  margin: 0px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+  font-size: 14px;
+  line-height: 16px;
+  color: #474747;
+  cursor: pointer;
 }
 
 #logos {
-    position: relative;
-    width: 190px;
-    height: 40px;
-    top: calc(15px + 4 * (var(--inputHeight) + 21px));
-    left: calc((var(--loginRegisterWidth) - 190px) / 2);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  position: relative;
+  width: 190px;
+  height: 40px;
+  top: calc(15px + 4 * (var(--inputHeight) + 21px));
+  left: calc((var(--loginRegisterWidth) - 190px) / 2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-#logos img{
-    width: 40px;
-    height: 40px;
+#logos img {
+  width: 40px;
+  height: 40px;
+}
+#img {
+  width: 40px;
+  height: 40px;
 }
 
-#logo {
-    position: absolute;
-    width: 73px;
-    height: 55px;
-    right: 45px;
-    top: 45px;
-    background: var(--secondary);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px 40px;
+.logo {
+  position: absolute;
+  width: 100px;
+  height: 117px;
+  right: 5px;
+  top: 15px;
+  /* background: var(--secondary);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px 40px; */
 }
 
 .habit {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 50px 100px;
-    column-gap: 10px;
-    row-gap: 5px;
-    justify-items: center;
-    align-items: center;
-    margin-bottom: 15px;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: 20px 100px;
+  column-gap: 10px;
+  row-gap: 5px;
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
 .streakMessage {
-    margin: 0px;
-    text-align: center;
+  margin: 0px;
+  text-align: center;
 }
 
 .completed {
-    margin: 0px;
-    text-align: center;
-    height: 30px;
-    font-size: 20px;
+  margin: 0px;
+  text-align: center;
+  height: 30px;
+  font-size: 20px;
 }
 
 .completeTick {
-    display: inline-block;
-    text-align: center;
-    background-color: #25C00B;
-    width: 30px;
-    height: 30px;
-    border-radius: 15px;
+  display: inline-block;
+  text-align: center;
+  background-color: #25c00b;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  font-size: 20px;
 }
 
 .streak {
-    display: flex;
-    align-items: center;
-    background-color: var(--primary);
-    margin: 0px;
-    border-radius: 50px;
-    width: 100px;
-    height: 100px;
-    vertical-align: middle;
+  display: flex;
+  align-items: center;
+  background-color: var(--primary);
+  margin: 0px;
+  border-radius: 50px;
+  width: 100px;
+  height: 100px;
+  vertical-align: middle;
 }
 
 .streakDays {
-    width: 100px;
-    margin: 0px;
-    text-align: center;
+  width: 100px;
+  margin: 0px;
+  text-align: center;
 }
 
 header {
-    height: 140px;
-    position: relative;
+  height: 140px;
+  position: relative;
 }
 
 header h2 {
-    position: absolute;
-    left: 10%;
-    top: 35px;
-    width: 30%;
-    color: var(--secondary);
-    margin: 0px;
+  position: absolute;
+  left: 10%;
+  top: 35px;
+  width: 40%;
+  color: var(--tertiary);
+  margin: 0px;
 }
 
 h2 {
-    font-weight: normal;
-    font-size: 1.2em;
+  font-weight: normal;
+  font-size: 1.2em;
 }
-
+#btn-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 #newHabitButton {
-    position: absolute;
-    width: 240px;
-    height: 41px;
-    left: calc(50vw - 120px);
-    bottom: 25px;
-    background: #7868E6;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-    color: white;
+  /* position: absolute; */
+  margin-bottom: 10px;
+  width: 240px;
+  height: 41px;
+  left: calc(50vw - 120px);
+  bottom: 25px;
+  background: #7868e6;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  border: var(--tertiary);
+  color: white;
 }
 
 #modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.4);
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .close {
-    color: #aaa;
-    float: right;
-    width: 50px;
-    text-align: center;
-    font-size: 50px;
-    font-weight: bold;
+  color: #aaa;
+  float: right;
+  width: 50px;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
 }
-  
-.close:hover, .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 #modal div {
-    position: absolute;
-    width: 280px;
-    height: 340px;
-    top: calc(50vh - 200px);
-    left: calc(50vw - 140px);
-    background-color: var(--primary);
+  position: absolute;
+  width: 280px;
+  height: 340px;
+  top: calc(50vh - 200px);
+  left: calc(50vw - 140px);
+  background-color: var(--primary);
 }
 
 #newHabit select {
-    display: block;
-    margin: auto;
-    width: var(--inputWidth);
-    height: var(--inputHeight);
-    background: var(--background);
-    border: none;
-    border-radius: 7px;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 16px;
-    color: #000000;
-    text-indent: 21px;
+  display: block;
+  margin: auto;
+  width: var(--inputWidth);
+  height: var(--inputHeight);
+  background: var(--background);
+  border: none;
+  border-radius: 7px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+  text-indent: 21px;
 }
 
 #newHabit label {
-    display: block;
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    width: var(--inputWidth);
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 16px;
-    color: #000000;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: var(--inputWidth);
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
 }
 
 #newHabit input[type="submit"] {
-    position: absolute;
-    width: 150px;
-    height: 31px;
-    left: 65px;
-    bottom: 20px;
-    text-indent: 0px;
-    background: #7868E6;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-    color: white;
-    font-weight: bold;
+  position: absolute;
+  width: 150px;
+  height: 31px;
+  left: 65px;
+  bottom: 20px;
+  text-indent: 0px;
+  background: #7868e6;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  border: var(--tertiary);
+  color: white;
+  font-weight: bold;
 }
 
+#username-display {
+  text-transform: capitalize;
+}
 
-.completed-tick-img{
-    height: 50px;
+.completed-tick-img {
+  height: 50px;
 }
 
 @media (hover: none) {
-    #regLogin {
-        cursor: auto;
-    }
+  #regLogin {
+    cursor: auto;
+  }
 
-#errorPage h3 {
+  #errorPage h3 {
     color: var(--tertiary);
     text-align: center;
-}
+  }
 
-#errorPage h1 span {
+  #errorPage h1 span {
     color: var(--tertiary);
     text-align: center;
     font-size: 80px;
-}
+  }
 
-#errorPage h1 {
+  #errorPage h1 {
     color: var(--tertiary);
     text-align: center;
     font-size: 50px;
-}
+  }
 
-#errorPage a {
+  h1 {
+    text-align: center;
+  }
+  h6 {
+    margin-top: 10px;
+    font-size: 15px;
+    font-family: "Courier New", Courier, monospace;
+    letter-spacing: 0.01rem;
+    font-weight: 200;
+  }
+
+  #errorPage a {
     position: absolute;
     width: 100%;
     bottom: 10px;
     margin: 0px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: normal;
     text-align: center;
@@ -329,32 +375,59 @@ h2 {
     color: #474747;
     cursor: pointer;
     text-decoration: none;
-}
+  }
 
-@media (hover: none) {
+  /* #instructions{
+    margin-top: 10px;
+    font-size: 15px;
+
+} */
+
+  h4.completed {
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+
+  #logout {
+    margin-left: 15px;
+    color: var(--background);
+    font-weight: 600;
+  }
+
+  @media (hover: none) {
     .close {
-        color: white;
+      color: white;
     }
-}
+  }
 
-@media screen and (min-width: 300px) {
+  @media screen and (min-width: 300px) {
     h2 {
-        font-size: 1.5em;
+      font-size: 1.5em;
     }
-}
+    #logout {
+      margin-left: 15px;
+      color: var(--background);
+      font-weight: 600;
+    }
+  }
 
-@media screen and (min-width: 500px) {
+  @media screen and (min-width: 500px) {
     body {
-        width: 500px;
-        margin: 0 auto;
+      width: 500px;
+      margin: 0 auto;
     }
 
     main {
-        left: calc((500px - var(--loginRegisterWidth)) / 2);
+      left: calc((500px - var(--loginRegisterWidth)) / 2);
+    }
+    #logout {
+      margin-left: 15px;
+      color: var(--background);
+      font-weight: 600;
     }
 
-    #newHabitButton {
-        left: 130px;
-    }
-}
+    /* #newHabitButton {
+        left: 130px; 
+    } */
+  }
 }

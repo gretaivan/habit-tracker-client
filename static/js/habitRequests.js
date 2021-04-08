@@ -1,9 +1,11 @@
-const server = 'http://localhost:3000';
+// const server = 'http://localhost:3000';
 
 const form = document.getElementById('newHabit')
 form.addEventListener('submit', sendHabitInfo)
 
 const user_id = localStorage.getItem('user-id');
+
+
 
 // fetch request for when user creates a habit
 
