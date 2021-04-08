@@ -1,4 +1,3 @@
-// RENDERS CONTENT ACOORDING TO PATHS
 function render404() {
     const errorDiv = document.createElement('div');
     errorDiv.setAttribute('id', 'errorPage');
@@ -15,7 +14,6 @@ function render404() {
     errorDiv.appendChild(error);
     errorDiv.appendChild(homeLink);
     main.appendChild(errorDiv);
-    //add error styling in css
 }
 
 function renderLoginForm() {
@@ -39,7 +37,6 @@ function renderLoginForm() {
     })
 
     form.setAttribute("id", "login")
-    // form.addEventListener('submit', requestLogin)
     main.appendChild(form);
 
     const formSwitch = document.createElement('p');
@@ -49,9 +46,6 @@ function renderLoginForm() {
 
     document.getElementById('regLogin').addEventListener("click", changeForm);
 
-
-    //TODO after submit click
-    //call authenticate
     form.addEventListener('submit', authenticate);
     
     main.setAttribute('class', 'login')
@@ -79,7 +73,6 @@ function renderRegisterForm() {
     })
 
     form.setAttribute("id", "register")
-    // form.addEventListener('submit', requestLogin)
     main.appendChild(form);
 
     const logoDiv = document.createElement('div');
@@ -101,8 +94,6 @@ function renderRegisterForm() {
 
     document.getElementById('regLogin').addEventListener("click", changeForm);
 
-    //TODO after submit click
-    //call authenticate
     form.addEventListener('submit', authenticate);
     
     main.setAttribute('class', 'register')
