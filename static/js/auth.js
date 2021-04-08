@@ -33,6 +33,7 @@ async function authenticate(e){
 
         const res = await fetch(urlPath, options);
         const resData = await res.json(); 
+
         console.log(resData)
 
         
