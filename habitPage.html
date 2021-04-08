@@ -8,79 +8,55 @@
     <link rel="shortcut icon" type="image/jpg" href="/static/images/eat, sleep, code, repeat favicon.png"/>
 </head>
 <body>
-    <main style="display: none;"></main>
-    <header>
-        <h2 id="greeting">Hi <b><span id="username-display">User</span></b>, here are your habits<br> </h2>
-        <div id="logo"><p id="logout">logout</p></div>
-        <!-- <span id="instructions">click on the image to complete a habit</span> -->
-        
-    </header>
-    <section></section>
-    <!-- <div class="habit">
-        <h4 class="completed">Completed <span class="completeTick">&#10004;</span></h4>
-        <h4 class="streakMessage">Congratulations<br /> you have reached</h4>
-        <img class="habitImg" src="static/images/laptop.png" />
-        <div class="streak">
-            <h2 class="streakDays">38 DAYS</h2>
-        </div>
-    </div> -->
-    <!--<div class="habit">
-        <h4 class="completed">Completed <span class="completeTick">&#10004;</span></h4>
-        <h4 class="streakMessage">Congratulations<br /> you have reached</h4>
-        <img class="habitImg" src="static/images/water.png" />
-        <div class="streak">
-            <h2 class="streakDays">20 DAYS</h2>
-        </div>
-    </div>
-    <div class="habit">
-        <h4 class="completed">Double click icon if completed</span></h4>
-        <h4 class="streakMessage">Congratulations<br /> you have reached</h4>
-        <img class="habitImg" src="static/images/sleep.png" />
-        <div class="streak">
-            <h2 class="streakDays">7 DAYS</h2>
-        </div>
-    </div> -->
-    <div id="btn-div">
-        <button id="newHabitButton">create new habit</button>
-    </div>
-  
-  
-    <div id="modal">
-        <span class="close">&times;</span>
-        <div>
-            <form id="newHabit">
-                <label for="habitName">I want to track my</label>
-                <select id="habitName" name="habitName" placeholder="Select a habit">
-                    <option value="" selected disabled hidden>Select a habit</option>
-                    <option value="code">Coding</option>
-                    <option value="water">Water intake</option>
-                    <option value="sleep">Sleep</option>
-                </select>
-                <label for="habitGoal">and reach a goal of</label>
-                <select id="habitGoal" name="habitGoal">
-                    <option value="" selected disabled hidden>Select goal</option>
-                    <option value="fourteen">14 days</option>
-                    <option value="thirtyOne">31 days</option>
-                    <option value="ninety">90 days</option>
-                </select>
-                <label for="habitFreq">and track it every</label>
-                <select id="habitFreq" name="habitFreq">
-                    <option value="" selected disabled hidden>Select frequency</option>
-                    <option value="1">Day</option>
-                    <option value="2">Two days</option>
-                    <option value="7">Week</option>
-                </select>
-                <input type="submit" value="create new habit">
-                
-            </form>
-        </div>
-    </div>
+    <div class="mobile-container">
+        <main style="display: none;"></main>
+        <header>
+            <h2 id="greeting">Hi <b><span id="username-display">User</span></b>, here are your habits</h2>
+            <div id="logo"><p id="logout">logout</p></div>
+        </header>
 
+        <section></section>
+        
+        <div id="btn-div">
+            <button id="newHabitButton">create new habit</button>
+        </div>
     
-    <!-- <script src="static/js/auth.js"></script> -->
-    <!-- <script src="static/js/layout.js"></script> -->
-    <!-- <script src="static/js/content.js"></script> -->
-    <!-- <script src="static/js/index.js"></script> -->
+    
+        <div id="modal">
+            <span class="close">&times;</span>
+            <div>
+                <form id="newHabit">
+                    <label for="habitName">I want to track my</label>
+                    <select id="habitName" name="habitName" placeholder="Select a habit">
+                        <option value="" selected disabled hidden>Select a habit</option>
+                        <option value="code">Coding</option>
+                        <option value="water">Water intake</option>
+                        <option value="sleep">Sleep</option>
+                    </select>
+                    <label for="habitGoal">and reach a goal of</label>
+                    <select id="habitGoal" name="habitGoal">
+                        <option value="" selected disabled hidden>Select goal</option>
+                        <option value="fourteen">14 days</option>
+                        <option value="thirtyOne">31 days</option>
+                        <option value="ninety">90 days</option>
+                    </select>
+                    <label for="habitFreq">and track it every</label>
+                    <select id="habitFreq" name="habitFreq">
+                        <option value="" selected disabled hidden>Select frequency</option>
+                        <option value="1">Day</option>
+                        <option value="2">Two days</option>
+                        <option value="7">Week</option>
+                    </select>
+                    <input type="submit" value="create new habit">
+                    
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+    
+
     <script src="static/js/habit.js"></script>
     <script src="static/js/habitRequests.js"></script>
     <script src="static/js/auth.js"></script>

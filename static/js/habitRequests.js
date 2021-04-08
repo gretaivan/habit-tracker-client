@@ -5,7 +5,7 @@ form.addEventListener('submit', sendHabitInfo)
 
 const user_id = localStorage.getItem('user-id');
 
-document.getElementById('logout').addEventListener('click', logout)
+
 
 // fetch request for when user creates a habit
 
