@@ -21,6 +21,7 @@ function renderHabit(habitData) {
 
     let habit = document.createElement('div');
     habit.setAttribute('class', 'habit');
+    // habit.setAttribute('id', `habit`);
 
     // habit.addEventListener('click', () => console.log(habit))
 
@@ -33,35 +34,51 @@ function renderHabit(habitData) {
     //     completed.innerHTML = "Double click icon if completed";
     // }
     habit.appendChild(completed);
-    let streakMessage = document.createElement('h4');
-    streakMessage.setAttribute('class', 'streakMessage');
-    streakMessage.innerHTML = 'Congratulations<br /> you have reached';
-    habit.appendChild(streakMessage);
-    let habitImg = document.createElement('img');
-    habitImg.setAttribute('class', 'habitImg');
-    let Imgsrc;
-    if (habitData.habit_name == "code") {
-        Imgsrc = "static/images/laptop.png";
-    } else if (habitData.habit_name == "water") {
-        Imgsrc = "static/images/water.png";
-    } else {
-        Imgsrc = "static/images/sleep.png";
-    }
-    habitImg.setAttribute('src', Imgsrc);
-    habit.appendChild(habitImg);
-    let streakBubble = document.createElement('div');
-    streakBubble.setAttribute('class', 'streak');
-    let streakDays = document.createElement('h2');
-    streakDays.setAttribute('class', 'streakDays');
-    if (habitData.frequency == 7) {
-        streakDays.textContent = `${habitData.streak} WEEKS`
-    } else {
-        streakDays.textContent = `${habitData.streak} DAYS`
-    }
-    streakBubble.appendChild(streakDays);
-    habit.appendChild(streakBubble);
-    let body = document.querySelector('body');
-    body.appendChild(habit);
+
+
+
+   
+
+    // let streakMessage = document.createElement('h4');
+    // streakMessage.setAttribute('class', 'streakMessage');
+    // streakMessage.innerHTML = 'Congratulations<br /> you have reached';
+    // habit.appendChild(streakMessage);
+    // let habitImg = document.createElement('img');
+    // habitImg.setAttribute('class', 'habitImg');
+    // let Imgsrc;
+    // if (habitData.habit_name == "code") {
+    //     Imgsrc = "static/images/laptop.png";
+    // } else if (habitData.habit_name == "water") {
+    //     Imgsrc = "static/images/water.png";
+    // } else {
+    //     Imgsrc = "static/images/sleep.png";
+    // }
+    // habitImg.setAttribute('src', Imgsrc);
+    // habit.appendChild(habitImg);
+    // let streakBubble = document.createElement('div');
+    // streakBubble.setAttribute('class', 'streak');
+    // let streakDays = document.createElement('h2');
+    // streakDays.setAttribute('class', 'streakDays');
+
+    // if (habitData.frequency == 7) {
+    //     streakDays.textContent = `${habitData.streak} WEEKS`
+    // } else {
+    //     streakDays.textContent = `${habitData.streak} DAYS`
+    // }
+    // streakBubble.appendChild(streakDays);
+    // habit.appendChild(streakBubble);
+
+
+    habit.setAttribute("id", habitData.id);
+    let main = document.querySelector('section')
+    main.append(habit)
+
+    generateStreak(habitData);
+
+
+    // let body = document.querySelector('body');
+    // body.appendChild(habit);
+
 
 
     //add info from the form 
@@ -86,7 +103,7 @@ function renderHabit(habitData) {
 
    
 
-    
+  
 
      //if last completed date and todays date are the same, I don't want to show button
 
@@ -94,55 +111,110 @@ function renderHabit(habitData) {
     //         habitName.append(completeButton)
     //         completeButton.style.backgroundColor = "green"
     
-    habit.setAttribute("id", habitData.id);
-    let main = document.querySelector('section')
-    main.append(habit)
+    
 
-
+    renderCompleted(habitData)
     // document.getElementById(id).addEventListener('click', completedTick)
     main.addEventListener('click', completedTick)
 
-    renderCompleted(habitData.id)
+   
     // completedTick(); 
 }
 
+function generateStreak(habitData) {
+    console.log("generate streak")
+    console.log(habitData.id)
 
-function renderCompleted(id){
-    let habitDiv = document.getElementById(id)
+    let habit = document.getElementById(habitData.id)
+
+    let streakMessage = document.createElement('h4');
+    streakMessage.setAttribute('class', 'streakMessage');
+    streakMessage.innerHTML = 'Congratulations<br /> you have reached';
+    habit.appendChild(streakMessage);
+    let habitImg = document.createElement('img');
+    habitImg.setAttribute('class', 'habitImg');
+    let Imgsrc;
+    if (habitData.habit_name == "code") {
+        Imgsrc = "static/images/laptop.png";
+    } else if (habitData.habit_name == "water") {
+        Imgsrc = "static/images/water.png";
+    } else {
+        Imgsrc = "static/images/sleep.png";
+    }
+    habitImg.setAttribute('src', Imgsrc);
+    habit.appendChild(habitImg);
+    let streakBubble = document.createElement('div');
+    streakBubble.setAttribute('class', 'streak');
+    let streakDays = document.createElement('h2');
+    streakDays.setAttribute('class', 'streakDays');
+
+    if (habitData.frequency == 7) {
+        streakDays.textContent = `${habitData.streak} WEEKS`
+    } else {
+        streakDays.textContent = `${habitData.streak} DAYS`
+    }
+    streakBubble.appendChild(streakDays);
+    habit.appendChild(streakBubble);
+}
+
+
+function renderCompleted(data){
+    console.log("render completed")
+    let habitDiv = document.getElementById(data.id)
+
     // habitDiv.addEventListener('click', completedTick(id))
     let div = document.createElement('div')
-    let divId =  'completed-' + id;
+    let divId =  'completed-' + data.id;
     div.setAttribute("id", divId);
     habitDiv.appendChild(div);
 
-    
-    
-   
+    //fetch 
+    console.log("habit id")
+    console.log(data.id)
+    updateCompletedStatus(data.id); 
+    // console.log(response)
+
+    //get the status of habit ? 
+    if(data.completed === true){
+        loadCompleted(data.id); 
+    } 
 }
 
+function loadCompleted(id){
+    console.log("loading tick")
+    let img = document.createElement('img');
+    img.setAttribute("class", "completed-tick-img")
+    let div = document.getElementById(`completed-${id}`)
+    img.src = "https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/256x256/plain/checkbox.png"
+    div.appendChild(img)
+    // console.log(id)
+    // updateCompleted(id)
+}
 
 
 function completedTick(e){
     console.log("HI I AM TICKING FUNCTION")
-    console.log(e.target.parentNode.id)
+    
     let id = e.target.parentNode.id
     let img = document.createElement('img');
     img.setAttribute("class", "completed-tick-img")
-    // let div = document.getElementById(`complete-${id}`)
     let div = document.getElementById(`completed-${id}`)
     
-    console.log("child count")
 
-    console.log(div.childElementCount)
-    console.log(div.innerHTML)
     if (div.childElementCount < 1){
         img.src = "https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/256x256/plain/checkbox.png"
         div.appendChild(img)
-     } else {
-         console.log("ATTEMPT TO REMOVE")
-       div.removeChild(div.lastChild)
-     }
+       
+        updateCompleted(id)
+        // generateStreak(e.target.parentNode)
+    }
 
+  location.reload();
+    //  } else {
+    //     console.log("ATTEMPT TO REMOVE")
+    //     div.removeChild(div.lastChild)
+    //     // updateCompleted(id)
+    //  }
 }
 
  

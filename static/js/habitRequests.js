@@ -1,3 +1,5 @@
+const server = 'http://localhost:3000';
+
 const form = document.getElementById('newHabit')
 form.addEventListener('submit', sendHabitInfo)
 
@@ -55,8 +57,6 @@ async function updateCompleted(id){
     
     const resData = await res.json(); 
     console.log(resData)
-    // location.reload()
-    window.alert('Completed')
     }
 
     catch(err)
@@ -65,3 +65,16 @@ async function updateCompleted(id){
 
 }
 
+async function updateCompletedStatus(id){
+    const options = {
+        method: 'PATCH',
+    }
+
+    try{
+        const response = await fetch(`${server}/habits/reset/${id}`, options);
+        const data = await response.json(); 
+    } catch (err) {
+        console.log(err)
+    }
+
+}
