@@ -110,6 +110,11 @@ function renderRegisterForm() {
 
 function renderUserPage(){
     location.assign("./habitPage.html");
+<<<<<<< HEAD
 }
 
 module.exports = {render404, renderLoginForm, renderRegisterForm, renderUserPage}
+=======
+   
+}
+>>>>>>> main

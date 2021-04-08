@@ -36,6 +36,7 @@ function updateMain(path) {
     } else {
         renderLoginForm();
     }
+<<<<<<< HEAD
 }
 
 module.exports = {
@@ -44,3 +45,6 @@ module.exports = {
 }
 
 // document.getElementById('regLogin').addEventListener("click", changeForm);
+=======
+}
+>>>>>>> main

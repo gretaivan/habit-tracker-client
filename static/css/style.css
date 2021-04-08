@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
 
 :root{
     --background: #EDEEF7;
@@ -19,8 +21,22 @@ html, body {
     height: 100vh;
     width: 100vw;
     margin: 0;
-    background-color: var(--background);
+    background-color:var(--background);
+    font-family: 'Roboto', sans-serif;
+
 } 
+
+.mobile-container {
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;  
+    /* background-color: black; */
+
+}
+  
 
 main {
     width: var(--loginRegisterWidth);
@@ -130,8 +146,8 @@ main input[type="submit"] {
 
 .habit {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 50px 100px;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 20px 100px;
     column-gap: 10px;
     row-gap: 5px;
     justify-items: center;
@@ -158,6 +174,7 @@ main input[type="submit"] {
     width: 30px;
     height: 30px;
     border-radius: 15px;
+    font-size: 20px;
 }
 
 .streak {
@@ -186,8 +203,8 @@ header h2 {
     position: absolute;
     left: 10%;
     top: 35px;
-    width: 30%;
-    color: var(--secondary);
+    width: 40%;
+    color: var(--tertiary);
     margin: 0px;
 }
 
@@ -195,9 +212,14 @@ h2 {
     font-weight: normal;
     font-size: 1.2em;
 }
-
+#btn-div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 #newHabitButton {
-    position: absolute;
+    /* position: absolute; */
+    margin-bottom: 10px;
     width: 240px;
     height: 41px;
     left: calc(50vw - 120px);
@@ -288,6 +310,19 @@ h2 {
     font-weight: bold;
 }
 
+#username-display{
+    text-transform: capitalize;
+}
+
+.completed-tick-img{
+    height: 50px;
+}
+
+@media (hover: none) {
+    #regLogin {
+        cursor: auto;
+    }
+
 #errorPage h3 {
     color: var(--tertiary);
     text-align: center;
@@ -303,6 +338,17 @@ h2 {
     color: var(--tertiary);
     text-align: center;
     font-size: 50px;
+}
+
+h1{ 
+    text-align: center;
+}
+h6{
+    margin-top: 10px;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 0.01rem;
+    font-weight: 200;
 }
 
 #errorPage a {
@@ -321,6 +367,24 @@ h2 {
     text-decoration: none;
 }
 
+/* #instructions{
+    margin-top: 10px;
+    font-size: 15px;
+
+} */
+
+h4.completed{
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+#logout{
+    margin-left: 15px;
+    color: var(--background);
+    font-weight: 600;
+}
+
+
 @media (hover: none) {
     .close {
         color: white;
@@ -331,6 +395,12 @@ h2 {
     h2 {
         font-size: 1.5em;
     }
+    #logout{
+        margin-left: 15px;
+        color: var(--background);
+        font-weight: 600;
+    }
+    
 }
 
 @media screen and (min-width: 500px) {
@@ -342,8 +412,15 @@ h2 {
     main {
         left: calc((500px - var(--loginRegisterWidth)) / 2);
     }
-
-    #newHabitButton {
-        left: 130px;
+    #logout{
+        margin-left: 15px;
+        color: var(--background);
+        font-weight: 600;
     }
+
+    /* #newHabitButton {
+        left: 130px; 
+    } */
+    
+}
 }
