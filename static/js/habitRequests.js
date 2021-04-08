@@ -55,10 +55,12 @@ async function updateCompleted(id){
     
     const resData = await res.json(); 
     console.log(resData)
-    location.reload()
+    // location.reload()
+    window.alert('Completed')
     }
 
-    catch(err){console.log(err)
+    catch(err)
+    {console.log(err)
     }
 
 }

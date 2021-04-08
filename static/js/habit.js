@@ -9,14 +9,14 @@ span.addEventListener('click', () => modal.style.display = "none");
 
 function renderHabit(habitData) {
 
-    //if last completed date and todays date are the same, I don't want to show button
+    // //if last completed date and todays date are the same, I don't want to show button
 
-    let today = new Intl.DateTimeFormat("fr-CA", {year: "numeric", month: "2-digit", day: "2-digit"}).format(Date.now())
-    // let today = "2021-04-09"
+    // let today = new Intl.DateTimeFormat("fr-CA", {year: "numeric", month: "2-digit", day: "2-digit"}).format(Date.now())
+    // // let today = "2021-04-09"
 
-    // let lastCompletedDate = "2021-04-09T00:00:00.000Z"
-    let lastCompletedDate = habitData.last_comp_date
-    console.log(lastCompletedDate)
+    // // let lastCompletedDate = "2021-04-09T00:00:00.000Z"
+    // let lastCompletedDate = habitData.last_comp_date
+    // console.log(lastCompletedDate)
 
 
     let habit = document.createElement('div');
@@ -81,6 +81,23 @@ function renderHabit(habitData) {
     
     habitName.append(frequency)
 
+
+     //if last completed date and todays date are the same, I don't want to show button
+
+    // let completeButton = document.createElement('button')
+    //         habitName.append(completeButton)
+    //         completeButton.style.backgroundColor = "green"
+
+      let lastCompletedDate = habitData.last_comp_date
+        //   let today = new Intl.DateTimeFormat("fr-CA", {year: "numeric", month: "2-digit", day: "2-digit"}).format(Date.now())
+              let today = "2021-04-09"
+
+          console.log(lastCompletedDate)
+          console.log(today)
+
+
+        
+
     if (lastCompletedDate != null){
         var slicedastCompletedDate = lastCompletedDate.slice(0,10)
         console.log(slicedastCompletedDate)
@@ -139,24 +156,9 @@ function renderHabit(habitData) {
             completeButton.onclick = () => updateCompleted(habitData.id)
     }
 
-
-
-
-
-    
-
-    // completed button
-
-
-     
-
-    
-
-    // completeButton.textContent = "Completed"
-
-    // add event listener to completed button 
-
 }
+
+// }
 
 
 
