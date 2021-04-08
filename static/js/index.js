@@ -1,3 +1,4 @@
+
 const publicRoutes = ['#', '#login', '#register'];
 const privateRoutes = ['#habits'];
 
@@ -8,6 +9,8 @@ window.addEventListener('load', updateContent);
 
 function updateContent(){
     const path = window.location.hash;
+    //console.log("window path: " + path)
+
     //private path or not existing user
     if (privateRoutes.includes(path) && !currentUser()){
         window.location.hash = '#';
@@ -39,3 +42,5 @@ module.exports = {
     updateContent,
     updateMain
 }
+
+// document.getElementById('regLogin').addEventListener("click", changeForm);
