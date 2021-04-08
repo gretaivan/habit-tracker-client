@@ -39,7 +39,3 @@ function updateMain(path) {
         renderLoginForm();
     }
 }
-
-
-
-// document.getElementById('regLogin').addEventListener("click", changeForm);
