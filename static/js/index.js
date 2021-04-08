@@ -1,6 +1,6 @@
 
-const publicRoutes = ['#', '#login', '#register', '#habits'];
-const privateRoutes = [];
+const publicRoutes = ['#', '#login', '#register'];
+const privateRoutes = ['#habits'];
 
 
 window.addEventListener('hashchange', updateContent);

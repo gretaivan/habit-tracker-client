@@ -2,8 +2,6 @@ const server = 'http://localhost:3000';
 
 function currentUser(){
     const username = localStorage.getItem('username');
-
-
     //remove after dev
     console.log("username: " + username);
     return username;
@@ -33,24 +31,22 @@ async function authenticate(e){
 
         const res = await fetch(urlPath, options);
         const resData = await res.json(); 
-
-        console.log(resData)
-
-        
-
-        //if (resData.err){ throw Error(resData.err) }
-        
+      
         localStorage.setItem("user-id", resData.id);
         localStorage.setItem("username", resData.username);
-    //return id & username [server] of the user for both registration and login 
         window.location.hash = '#habits'
+
 
     } catch(err) {
         console.log("[ERROR]: authentication failed:\n" + err);
         alert("Something went wrong!")
     }
-    
+}
 
+
+function logout(){
+    localStorage.clear(); 
+    location.hash = '#login'
 }
 
 function register(data){

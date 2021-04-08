@@ -130,8 +130,8 @@ main input[type="submit"] {
 
 .habit {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 50px 100px;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 20px 100px;
     column-gap: 10px;
     row-gap: 5px;
     justify-items: center;
@@ -186,8 +186,8 @@ header h2 {
     position: absolute;
     left: 10%;
     top: 35px;
-    width: 30%;
-    color: var(--secondary);
+    width: 40%;
+    color: var(--tertiary);
     margin: 0px;
 }
 
@@ -195,9 +195,14 @@ h2 {
     font-weight: normal;
     font-size: 1.2em;
 }
-
+#btn-div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 #newHabitButton {
-    position: absolute;
+    /* position: absolute; */
+    margin-bottom: 10px;
     width: 240px;
     height: 41px;
     left: calc(50vw - 120px);
@@ -315,6 +320,13 @@ h2 {
     font-size: 50px;
 }
 
+h1{ 
+    text-align: center;
+}
+h6{
+    margin-top: 10px;
+}
+
 #errorPage a {
     position: absolute;
     width: 100%;
@@ -331,6 +343,15 @@ h2 {
     text-decoration: none;
 }
 
+/* #instructions{
+    margin-top: 10px;
+    font-size: 15px;
+
+} */
+
+#logout{
+    margin-left: 15px;
+}
 @media (hover: none) {
     .close {
         color: white;
@@ -341,6 +362,7 @@ h2 {
     h2 {
         font-size: 1.5em;
     }
+    
 }
 
 @media screen and (min-width: 500px) {
@@ -353,8 +375,9 @@ h2 {
         left: calc((500px - var(--loginRegisterWidth)) / 2);
     }
 
-    #newHabitButton {
-        left: 130px;
-    }
+    /* #newHabitButton {
+        left: 130px; 
+    } */
+    
 }
 }

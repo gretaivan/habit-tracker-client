@@ -5,13 +5,15 @@
     <title>Force of Habit</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="static/css/style.css">
-    <!-- <script defer src="./bundle.js"></script> -->
+    <link rel="shortcut icon" type="image/jpg" href="/static/images/eat, sleep, code, repeat favicon.png"/>
 </head>
 <body>
     <main style="display: none;"></main>
     <header>
-        <h2 id="greeting">Hi <b>User</b>, here are your habits</h2>
-        <div id="logo"></div>
+        <h2 id="greeting">Hi <b><span id="username-display">User</span></b>, here are your habits<br> </h2>
+        <div id="logo"><p id="logout">logout</p></div>
+        <!-- <span id="instructions">click on the image to complete a habit</span> -->
+        
     </header>
     <section></section>
     <!-- <div class="habit">
@@ -38,7 +40,10 @@
             <h2 class="streakDays">7 DAYS</h2>
         </div>
     </div> -->
-    <button id="newHabitButton">create new habit</button>
+    <div id="btn-div">
+        <button id="newHabitButton">create new habit</button>
+    </div>
+  
   
     <div id="modal">
         <span class="close">&times;</span>

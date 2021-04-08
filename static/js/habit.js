@@ -9,6 +9,8 @@ span.addEventListener('click', () => modal.style.display = "none");
 
 function renderHabit(habitData) {
 
+    const username = localStorage.getItem('username');
+    document.getElementById('username-display').textContent = username;
     // //if last completed date and todays date are the same, I don't want to show button
 
     // let today = new Intl.DateTimeFormat("fr-CA", {year: "numeric", month: "2-digit", day: "2-digit"}).format(Date.now())
@@ -82,6 +84,18 @@ function renderHabit(habitData) {
 
 
     //add info from the form 
+    let str = 'I will '; 
+
+    if (habitData.habit_name == "code") {
+       str += 'code 4 - 8 hours ';
+
+    } else if (habitData.habit_name == "water") {
+        str += 'drink at least 8 glasses of water ';
+
+    } else {
+        str += ' sleep at least 8 hours ';
+
+    }
 
     let habitName = document.createElement('h1')
     habitName.textContent = `Habit: ${habitData.habit_name}`
@@ -89,16 +103,18 @@ function renderHabit(habitData) {
     let frequency = document.createElement('h6')
   
     if (habitData.frequency === 1){
-        frequency.textContent = `You are tracking this habit: Daily`
+        str += 'daily'
+        // frequency.textContent = `You are tracking this habit: Daily`
     }
 
     else if(habitData.frequency === 2){
-        frequency.textContent = `You are tracking this habit every other day`}
-
+        str += 'every other day';
+    }
     else{
-        frequency.textContent = `You are tracking this habit: Weekly`
+        str += 'weekly';
     }
     
+    frequency.textContent = str;
     habitName.append(frequency)
 
    
@@ -129,17 +145,22 @@ function generateStreak(habitData) {
 
     let streakMessage = document.createElement('h4');
     streakMessage.setAttribute('class', 'streakMessage');
-    streakMessage.innerHTML = 'Congratulations<br /> you have reached';
+
+    // streakMessage.innerHTML = 'Your streak is';
+
     habit.appendChild(streakMessage);
     let habitImg = document.createElement('img');
     habitImg.setAttribute('class', 'habitImg');
     let Imgsrc;
     if (habitData.habit_name == "code") {
         Imgsrc = "static/images/laptop.png";
+
     } else if (habitData.habit_name == "water") {
         Imgsrc = "static/images/water.png";
+
     } else {
         Imgsrc = "static/images/sleep.png";
+
     }
     habitImg.setAttribute('src', Imgsrc);
     habit.appendChild(habitImg);
@@ -148,11 +169,12 @@ function generateStreak(habitData) {
     let streakDays = document.createElement('h2');
     streakDays.setAttribute('class', 'streakDays');
 
-    if (habitData.frequency == 7) {
-        streakDays.textContent = `${habitData.streak} WEEKS`
-    } else {
-        streakDays.textContent = `${habitData.streak} DAYS`
-    }
+    streakDays.textContent = `Streak: ${habitData.streak}`
+    // if (habitData.frequency == 7) {
+    //     streakDays.textContent = `${habitData.streak} WEEKS`
+    // } else {
+    //     streakDays.textContent = `${habitData.streak} DAYS`
+    // }
     streakBubble.appendChild(streakDays);
     habit.appendChild(streakBubble);
 }
@@ -185,7 +207,7 @@ function loadCompleted(id){
     let img = document.createElement('img');
     img.setAttribute("class", "completed-tick-img")
     let div = document.getElementById(`completed-${id}`)
-    img.src = "https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/256x256/plain/checkbox.png"
+    img.src = 'static/images/checkmark.png'
     div.appendChild(img)
     // console.log(id)
     // updateCompleted(id)
@@ -193,7 +215,6 @@ function loadCompleted(id){
 
 
 function completedTick(e){
-    console.log("HI I AM TICKING FUNCTION")
     
     let id = e.target.parentNode.id
     let img = document.createElement('img');
@@ -202,7 +223,7 @@ function completedTick(e){
     
 
     if (div.childElementCount < 1){
-        img.src = "https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/256x256/plain/checkbox.png"
+        img.src = 'static/images/checkmark.png'
         div.appendChild(img)
        
         updateCompleted(id)
