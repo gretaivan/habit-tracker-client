@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1617866798946" clover="3.2.0">
-  <project timestamp="1617866798946" name="All files">
+<coverage generated="1617866842411" clover="3.2.0">
+  <project timestamp="1617866842411" name="All files">
     <metrics statements="80" coveredstatements="80" conditionals="12" coveredconditionals="12" methods="12" coveredmethods="12" elements="104" coveredelements="104" complexity="0" loc="80" ncloc="80" packages="1" files="3" classes="3"/>
     <file name="content.js" path="C:\Users\james\FP_lap2\habit-tracker-client\static\js\content.js">
       <metrics statements="57" coveredstatements="57" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="9"/>

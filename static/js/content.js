@@ -19,7 +19,6 @@ function render404() {
 }
 
 function renderLoginForm() {
-    console.log("RENDERING LOGIN FORM")
     const fields = [
         { tag: 'input', attributes: { type: 'text', id: 'username', name: 'username', placeholder: 'Enter a username' } },
         { tag: 'input', attributes: { type: 'password', id: 'password', name: 'password', placeholder: 'Enter a password' } },
@@ -59,7 +58,6 @@ function renderLoginForm() {
 }
 
 function renderRegisterForm() {
-    console.log("RENDERING REGISTER FORM")
     const fields = [
         { tag: 'input', attributes: { type: 'text', id: 'reg-username', name: 'username', placeholder: 'Enter a username' } },
         { tag: 'input', attributes: { type: 'email', id: 'email', name: 'email', placeholder: 'Enter an email' } },
