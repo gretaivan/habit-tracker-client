@@ -2,15 +2,11 @@ const server = 'https://dry-sierra-67697.herokuapp.com';
 
 function currentUser(){
     const username = localStorage.getItem('username');
-
-
-    //remove after dev
     console.log("username: " + username);
     return username;
 }
 
-async function authenticate(e){
-    //trigered but event listener on submit 
+async function authenticate(e){ 
     e.preventDefault(); 
 
     try{
@@ -22,34 +18,38 @@ async function authenticate(e){
 
         let trigger = e.target.id;
 
-        if (trigger === 'register') register(options.body);
+        if (trigger === 'register')
+        {
+            register(options.body);
+        } 
 
         let urlPath = server; 
         urlPath += trigger === 'register' ? '/auth/register' : '/users/login';
 
-        //delete console.log post dev
-        console.log(urlPath);
-        console.log(options.body)
-
         const res = await fetch(urlPath, options);
         const resData = await res.json(); 
-        console.log(resData)
 
-        
+        if(resData.id === undefined){
+            throw new Error("User does not exist ")
+        }
 
-        //if (resData.err){ throw Error(resData.err) }
-        
         localStorage.setItem("user-id", resData.id);
         localStorage.setItem("username", resData.username);
-    //return id & username [server] of the user for both registration and login 
+
         window.location.hash = '#habits'
 
     } catch(err) {
         console.log("[ERROR]: authentication failed:\n" + err);
         alert("Something went wrong!")
-    }
-    
 
+        window.location.hash = '#login'
+    }
+}
+
+
+function logout(){
+    localStorage.clear(); 
+    location.assign("./index.html");
 }
 
 function register(data){
@@ -70,9 +70,8 @@ function register(data){
         let form = document.getElementById('register')
         console.log(form.childNodes)
 
-        //P will need styling!
-
         form.insertBefore(errorP, form.children[5])
+        throw new Error ("passwords do not match")
     }
 }
 
@@ -85,9 +84,3 @@ function confirmPassword(object){
     }
     return true; 
 }
-
-
-//TODO: function to authenticate
-
-//TOOD: function check if authentication was successful and redirect
-// window.location.hash = '#habits';

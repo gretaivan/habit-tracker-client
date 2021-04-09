@@ -1,4 +1,3 @@
-// RENDERS CONTENT ACOORDING TO PATHS
 function render404() {
     const errorDiv = document.createElement('div');
     errorDiv.setAttribute('id', 'errorPage');
@@ -15,11 +14,10 @@ function render404() {
     errorDiv.appendChild(error);
     errorDiv.appendChild(homeLink);
     main.appendChild(errorDiv);
-    //add error styling in css
+
 }
 
 function renderLoginForm() {
-    console.log("RENDERING LOGIN FORM")
     const fields = [
         { tag: 'input', attributes: { type: 'text', id: 'username', name: 'username', placeholder: 'Enter a username' } },
         { tag: 'input', attributes: { type: 'password', id: 'password', name: 'password', placeholder: 'Enter a password' } },
@@ -34,13 +32,13 @@ function renderLoginForm() {
 
        
         Object.entries(f.attributes).forEach(([a, v]) => {
-            field.setAttribute(a, v);    
+            field.setAttribute(a, v);
             form.appendChild(field);
-        })
+        })    
+        
     })
 
     form.setAttribute("id", "login")
-    // form.addEventListener('submit', requestLogin)
     main.appendChild(form);
 
     const formSwitch = document.createElement('p');
@@ -50,16 +48,20 @@ function renderLoginForm() {
 
     document.getElementById('regLogin').addEventListener("click", changeForm);
 
-
-    //TODO after submit click
-    //call authenticate
     form.addEventListener('submit', authenticate);
     
     main.setAttribute('class', 'login')
 }
 
+function generateLogo(){
+    let logoImg = document.createElement('img');
+    logoImg.setAttribute("class", "logo"); 
+    logoImg.src = "static/images/eat__sleep__code__repeat__3_-removebg-preview.png";
+    return logoImg;
+}
+
 function renderRegisterForm() {
-    console.log("RENDERING REGISTER FORM")
+   
     const fields = [
         { tag: 'input', attributes: { type: 'text', id: 'reg-username', name: 'username', placeholder: 'Enter a username' } },
         { tag: 'input', attributes: { type: 'email', id: 'email', name: 'email', placeholder: 'Enter an email' } },
@@ -75,13 +77,13 @@ function renderRegisterForm() {
         let field = document.createElement(f.tag);
 
         Object.entries(f.attributes).forEach(([a, v]) => {
-            field.setAttribute(a, v);    
-            form.appendChild(field);
-        })
+            field.setAttribute(a, v);
+        })    
+        form.appendChild(field);
     })
 
     form.setAttribute("id", "register")
-    // form.addEventListener('submit', requestLogin)
+
     main.appendChild(form);
 
     const logoDiv = document.createElement('div');
@@ -103,8 +105,6 @@ function renderRegisterForm() {
 
     document.getElementById('regLogin').addEventListener("click", changeForm);
 
-    //TODO after submit click
-    //call authenticate
     form.addEventListener('submit', authenticate);
     
     main.setAttribute('class', 'register')
