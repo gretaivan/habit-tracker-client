@@ -23,14 +23,13 @@ body {
   height: 100vh;
   width: 100vw;
   margin: 0;
-  /* background-color: var(--background); */
+  background-color: var(--background);
   font-family: "Roboto", sans-serif;
 }
 
 .mobile-container {
   max-width: 480px;
   width: 100%;
-  height: 100vh;
   margin: 0 auto;
   border-radius: 5px;
   padding-left: 0.7rem;
@@ -328,6 +327,29 @@ h2 {
   height: 50px;
 }
 
+footer{
+  display: flex;
+  justify-content: center;
+}
+
+#logout {
+  margin-left: 15px;
+  color: var(--background);
+  font-weight: 600;
+  color: var(--tertiary);
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  
+}
+
+#logout:hover{
+  cursor: pointer;
+}
+
+
+
+
+
 @media (hover: none) {
   #regLogin {
     cursor: auto;
@@ -377,22 +399,12 @@ h2 {
     text-decoration: none;
   }
 
-  /* #instructions{
-    margin-top: 10px;
-    font-size: 15px;
-
-} */
-
   h4.completed {
     margin-bottom: 5px;
     font-size: 16px;
   }
 
-  #logout {
-    margin-left: 15px;
-    color: var(--background);
-    font-weight: 600;
-  }
+  
 
   @media (hover: none) {
     .close {
@@ -404,11 +416,14 @@ h2 {
     h2 {
       font-size: 1.5em;
     }
-    #logout {
+    /* #logout {
       margin-left: 15px;
       color: var(--background);
       font-weight: 600;
     }
+    #logout:hover{
+      cursor: pointer;
+    } */
   }
 
   @media screen and (min-width: 500px) {
@@ -420,14 +435,16 @@ h2 {
     main {
       left: calc((500px - var(--loginRegisterWidth)) / 2);
     }
-    #logout {
+    /* #logout {
       margin-left: 15px;
       color: var(--background);
       font-weight: 600;
-    }
 
-    /* #newHabitButton {
-        left: 130px; 
+      
+    }
+    #logout:hover{
+      cursor: pointer;
     } */
+    
   }
 }

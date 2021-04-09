@@ -1,4 +1,4 @@
-
+const main = document.querySelector('main');
 const publicRoutes = ['#', '#login', '#register'];
 const privateRoutes = ['#habits'];
 

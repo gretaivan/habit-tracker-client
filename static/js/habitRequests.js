@@ -1,5 +1,3 @@
-// const server = 'http://localhost:3000';
-
 const form = document.getElementById('newHabit')
 form.addEventListener('submit', sendHabitInfo)
 

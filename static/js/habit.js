@@ -19,17 +19,12 @@ function renderHabit(habitData) {
     let completed = document.createElement('h4');
     completed.setAttribute('class', 'completed');
 
-
-
-
-       if (habitData.completed) {
+    if (habitData.completed) {
         completed.innerHTML = 'Completed <span class="completeTick">&#10004;</span>';
     } else {
         completed.innerHTML = "Click icon if completed";
     }
     
-
-
     habit.appendChild(completed);
 
     habit.setAttribute("id", habitData.id);
@@ -109,11 +104,6 @@ function generateStreak(habitData) {
     streakDays.setAttribute('class', 'streakDays');
 
     streakDays.textContent = `Streak: ${habitData.streak}`
-    // if (habitData.frequency == 7) {
-    //     streakDays.textContent = `${habitData.streak} WEEKS`
-    // } else {
-    //     streakDays.textContent = `${habitData.streak} DAYS`
-    // }
     streakBubble.appendChild(streakDays);
     habit.appendChild(streakBubble);
 }
@@ -123,38 +113,17 @@ function renderCompleted(data){
     console.log("render completed")
     let habitDiv = document.getElementById(data.id)
 
-    // habitDiv.addEventListener('click', completedTick(id))
     let div = document.createElement('div')
     let divId =  'completed-' + data.id;
     div.setAttribute("id", divId);
     habitDiv.appendChild(div);
 
-    //fetch 
-    console.log("habit id")
-    console.log(data.id)
     updateCompletedStatus(data.id); 
-    // console.log(response)
 
-    //get the status of habit ? 
     if(data.completed === true){
         // loadCompleted(data.id); 
     } 
 }
-
-// function loadCompleted(id){
-//     console.log("loading tick")
-//     let img = document.createElement('img');
-//     img.setAttribute("class", "completed-tick-img")
-//     let div = document.getElementById(`completed-${id}`)
-//     img.src = 'static/images/checkmark.png'
-//     div.appendChild(img)
-
-
-    // completed.innerHTML = 'Completed <span class="completeTick">&#10004;</span>';
-    // console.log(id)
-    // updateCompleted(id)
-// }
-
 
 function completedTick(e){
     
@@ -173,100 +142,8 @@ function completedTick(e){
     }
 
   location.reload();
-    //  } else {
-    //     console.log("ATTEMPT TO REMOVE")
-    //     div.removeChild(div.lastChild)
-    //     // updateCompleted(id)
-    //  }
 }
 
- 
-function test(){
-//PEARL
-
-
-
-      let lastCompletedDate = habitData.last_comp_date
-        //   let today = new Intl.DateTimeFormat("fr-CA", {year: "numeric", month: "2-digit", day: "2-digit"}).format(Date.now())
-            let today = "2021-04-09"  // later add funciton for today
-
-        console.log(lastCompletedDate)
-        console.log(today)
-
-    // btn logic 
-    // requires:  last completed date, today, frequency 
-    // to find if it is compliant with frequency
-    //e.g. frequency: week 
-        // frequency = 7; last completed_date = 07/04/2021; today 09/04/2021
-        //isCompliant = (last_completed_date + frequency) === today  --> false
-        // if()
-        
-
-    if (lastCompletedDate != null){
-        var slicedastCompletedDate = lastCompletedDate.slice(0,10)
-        console.log(slicedastCompletedDate)
-        console.log(today)
-        if (slicedastCompletedDate === today){
-        var message = document.createElement('h4')
-        message.textContent = "Already Completed Today"
-        habitName.append(message)
-
-        console.log(message)
- 
-        }
-
-        else {
-            console.log('has not been done today')
-            let completeButton = document.createElement('button')
-            habitName.append(completeButton)
-            completeButton.style.backgroundColor = "green"
-        
-            if (habitData.frequency === 1){
-            
-                completeButton.textContent = "Completed Today"
-        
-                }
-            
-                else if(habitData.frequency === 2){
-                    completeButton.textContent = "Completed in the last two days"}
-            
-                else{
-                    completeButton.textContent = "Completed in the last week"
-                }
-                
-            }     
-      
-       }
-
-       else {
-        console.log('has not been done today')
-        let completeButton = document.createElement('button')
-        habitName.append(completeButton)
-        completeButton.style.backgroundColor = "green"
-    
-        if (habitData.frequency === 1){
-        
-            completeButton.textContent = "Completed Today"
-    
-            }
-        
-            else if(habitData.frequency === 2){
-                completeButton.textContent = "Completed in the last two days"}
-        
-            else{
-                completeButton.textContent = "Completed in the last week"
-            }
-            
-            completeButton.onclick = () => updateCompleted(habitData.id)
-    }
-
-}
-
-// }
-
-
-
-//renders all habits on page
 function renderHabits(data){
     data.forEach(habit => renderHabit(habit))
 }
