@@ -273,3 +273,4 @@ function renderHabits(data){
 
 
 
+module.exports = {renderHabit, generateStreak, renderCompleted, completedTick, test, renderHabits}

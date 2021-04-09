@@ -86,7 +86,7 @@ function confirmPassword(object){
     return true; 
 }
 
-
+module.exports = {currentUser, authenticate, logout, register, confirmPassword}
 //TODO: function to authenticate
 
 //TOOD: function check if authentication was successful and redirect
