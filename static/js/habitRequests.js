@@ -21,7 +21,7 @@ function sendHabitInfo(e){
         headers: { "Content-Type": "application/json" }
     };
 
-    fetch('http://localhost:3000/habits', options)
+    fetch(`${server}/habits`, options)
         .then(r => r.json())
         .then(data => renderHabit(data)) // and close form
         .then(() => e.target.reset())
@@ -36,7 +36,7 @@ function getAllHabitsForUser(){
 
 //const user_id = 12345 // static for now until can get from local storage
 
-    fetch(`http://localhost:3000/habits/user/${user_id}`)
+    fetch(`${server}/habits/user/${user_id}`)
     .then(r => r.json())
     .then(data => renderHabits(data))
     .catch(console.warn)
@@ -49,7 +49,7 @@ async function updateCompleted(id){
         method: 'PATCH'
     };
     try{
-    const res = await fetch(`http://localhost:3000/habits/${id}`, options)
+    const res = await fetch(`${server}/habits/${id}`, options)
     
     const resData = await res.json(); 
     console.log(resData)
