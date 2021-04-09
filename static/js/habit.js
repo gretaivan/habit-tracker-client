@@ -273,4 +273,3 @@ function renderHabits(data){
 
 
 
-module.exports = renderHabit
