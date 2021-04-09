@@ -3,8 +3,6 @@ form.addEventListener('submit', sendHabitInfo)
 
 const user_id = localStorage.getItem('user-id');
 
-
-
 // fetch request for when user creates a habit
 
 function sendHabitInfo(e){
@@ -28,10 +26,7 @@ function sendHabitInfo(e){
         .then(data => renderHabit(data)) // and close form
         .then(() => e.target.reset())
         .catch(console.warn)
-
-    
 }
-
 
 //Displays all posts on page load for a specific user on pageload
 
@@ -46,7 +41,6 @@ function getAllHabitsForUser(){
     .then(data => renderHabits(data))
     .catch(console.warn)
 }
-
 
 // Request for when completed button is clicked
 
@@ -64,7 +58,6 @@ async function updateCompleted(id){
     catch(err)
     {console.log(err)
     }
-
 }
 
 async function updateCompletedStatus(id){

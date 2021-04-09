@@ -138,7 +138,7 @@ function completedTick(e){
         div.appendChild(img)
        
         updateCompleted(id)
-        // generateStreak(e.target.parentNode)
+  
     }
 
   location.reload();

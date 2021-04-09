@@ -72,8 +72,6 @@ function renderRegisterForm() {
 
     const form = document.createElement('form');
 
-
-
     fields.forEach(f => {
         
         let field = document.createElement(f.tag);

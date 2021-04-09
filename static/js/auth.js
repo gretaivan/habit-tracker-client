@@ -36,17 +36,13 @@ async function authenticate(e){
         localStorage.setItem("user-id", resData.id);
         localStorage.setItem("username", resData.username);
 
-
         window.location.hash = '#habits'
-
-
 
     } catch(err) {
         console.log("[ERROR]: authentication failed:\n" + err);
         alert("Something went wrong!")
 
         window.location.hash = '#login'
-
     }
 }
 
@@ -88,4 +84,3 @@ function confirmPassword(object){
     }
     return true; 
 }
-
