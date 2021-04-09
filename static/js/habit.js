@@ -133,13 +133,13 @@ function completedTick(e){
     let div = document.getElementById(`completed-${id}`)
     
 
-    if (div.childElementCount < 1){
-        img.src = 'static/images/checkmark.png'
-        div.appendChild(img)
+    // if (div.childElementCount < 1){
+    //     img.src = 'static/images/checkmark.png'
+    //     div.appendChild(img)
        
-        updateCompleted(id)
+    //     updateCompleted(id)
   
-    }
+    // }
 
   location.reload();
 }
