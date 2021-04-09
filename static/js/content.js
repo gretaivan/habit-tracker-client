@@ -34,8 +34,9 @@ function renderLoginForm() {
        
         Object.entries(f.attributes).forEach(([a, v]) => {
             field.setAttribute(a, v);
+            form.appendChild(field);
         })    
-        form.appendChild(field);
+        
     })
 
     form.setAttribute("id", "login")
