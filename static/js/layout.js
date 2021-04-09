@@ -22,5 +22,3 @@ function changeForm() {
         // main.style.top = "calc((100vh - var(--loginHeight)) / 2)";
     }
 }
-
-module.exports = {changeForm};
