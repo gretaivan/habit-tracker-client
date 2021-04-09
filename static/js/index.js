@@ -37,10 +37,3 @@ function updateMain(path) {
         renderLoginForm();
     }
 }
-
-module.exports = {
-    updateContent,
-    updateMain
-}
-
-// document.getElementById('regLogin').addEventListener("click", changeForm);
