@@ -1,10 +1,7 @@
-const main = document.querySelector('main');
-
-
 function changeForm() {
     regForm = document.getElementById('register');
-    loginForm = document.getElementById('login');
-    logos = document.getElementById('logos');
+    //loginForm = document.getElementById('login');
+    //logos = document.getElementById('logos');
     // main = document.querySelector('main');
     if (!regForm) {
         window.location.hash = '#register';
@@ -25,6 +22,3 @@ function changeForm() {
         // main.style.top = "calc((100vh - var(--loginHeight)) / 2)";
     }
 }
-
-
-

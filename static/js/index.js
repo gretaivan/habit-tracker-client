@@ -9,7 +9,7 @@ window.addEventListener('load', updateContent);
 
 function updateContent(){
     const path = window.location.hash;
-    console.log("window path: " + path)
+    //console.log("window path: " + path)
 
     //private path or not existing user
     if (privateRoutes.includes(path) && !currentUser()){
@@ -24,8 +24,6 @@ function updateMain(path) {
     main.innerHTML = '';
     if (path) {
         switch(path){
-            case '':
-                renderLoginForm(); break;
             case '#login':
                 renderLoginForm(); break;
             case '#register':
